@@ -2,26 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+    @apply scroll-smooth
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    @apply font-sans bg-background-950 text-text-50
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply tracking-tight
+}
+
+strong {
+    @apply font-black
+}
+
+button,
+a {
+    @apply focus-visible:outline-text-50
+}
+
+.btn {
+    padding: 0.5em 1em;
+    @apply font-medium rounded-md leading-7 no-underline focus-visible:outline-primary-50
+}
+
+.btn-primary {
+    @apply bg-primary-500 transition-transform ease-linear duration-200 hover:-translate-y-1 hover:shadow-primary-500 hover:shadow-2xl
+}
+
+.btn-secondary {
+    @apply bg-secondary-700 transition-transform ease-linear duration-200 hover:-translate-y-1
+}
+
+.section {
+    @apply mt-20 lg:mt-40
 }
