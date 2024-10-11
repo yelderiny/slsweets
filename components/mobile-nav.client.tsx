@@ -12,12 +12,12 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
     return (
         <div
             className={`
-                fixed inset-0 bg-primary-900 z-30 flex flex-col justify-evenly items-center
+                fixed inset-0 bg-background z-30 flex flex-col justify-evenly items-center
                 gap-4 opacity-0 pointer-events-none transition-opacity duration-100 ease-linear font-serif ${
                 isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0'
             }`}>
             <button
-                className='text-2xl text-text-50 absolute top-4 left-4'
+                className='text-2xl text-text absolute top-4 left-4'
                 aria-label='close menu'
                 onClick={toggleMenu}
             >
@@ -41,15 +41,15 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
             }`}>
                 <a onClick={toggleMenu} className='text-3xl relative' href='#story'>
                     Our Story
-                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
                 </a>
                 <a onClick={toggleMenu} className='text-3xl relative' href='#specialties'>
                     Our Specialties
-                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
                 </a>
                 <a onClick={toggleMenu} className='text-3xl relative' href='#contact'>
                     Contact Us
-                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
                 </a>
             </nav>
             <div className='border border-text-50 pr-6'/>
@@ -65,7 +65,7 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
                 >
                     <FaInstagram className='text-3xl m-auto mb-4'/>
                 </a>
-                <button className='btn btn-secondary'>Order Now</button>
+                <button className='btn btn-primary'>Order Now</button>
             </div>
         </div>
     );
