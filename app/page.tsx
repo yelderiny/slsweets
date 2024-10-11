@@ -227,7 +227,7 @@ export default function Home() {
                             <h2 className='text-xs text-center'>
                                 come for&#xa0;
                                 <span className='relative title'>The Cheesecake
-                                <span className='absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -287,7 +287,7 @@ export default function Home() {
                             <h2 className='text-xs text-center'>
                                 stay for&#xa0;
                                 <span className='relative title'>The Brownies
-                                <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -343,7 +343,7 @@ export default function Home() {
                             <h2 className='text-xs text-center'>
                                 relish in&#xa0;
                                 <span className='relative title'>The Cookies
-                                <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -401,7 +401,7 @@ export default function Home() {
                             <h2 className='text-xs text-center'>
                                 indulge in&#xa0;
                                 <span className='relative title'>The Truffles
-                                <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -459,7 +459,7 @@ export default function Home() {
                             <h2 className='text-xs text-center'>
                                 leave with&#xa0;
                                 <span className='relative title'>The Muffins
-                                <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -515,7 +515,7 @@ export default function Home() {
                     <section id='contact' className='container space-y-4'>
                         <h2 className='title text-center'>
                             <span className='relative'>Contact Us
-                                <span className='absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                             </span>
                         </h2>
                         <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
