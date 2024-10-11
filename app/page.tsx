@@ -185,7 +185,7 @@ export default function Home() {
                         <div className='order-1 space-y-8'>
                             <h2 className='title text-center'>
                                 <span className='relative'>Welcome to SLSweets
-                                    <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                    <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
@@ -234,14 +234,17 @@ export default function Home() {
                                 Freshly Baked with Love. Our cheesecakes come in a variety of flavors and sizes:
                                 Blueberry, Raspberry, Strawberry, Salted Caramel, and Lotus! Order yours today.
                             </p>
-                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
+                            <div className='
+                                px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:py-0 sm:grid
+                                sm:grid-cols-2
+                            '>
                                 {
                                     cheesecake.map((cake, index) => (
                                         <Image
                                             key={index}
                                             className={`
-                                                w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96 
-                                                snap-center ${cake.overrides
+                                                w-72 h-96 object-cover flex-shrink-0 rounded-md snap-center
+                                                sm:w-full lg:w-96 ${cake.overrides
                                             }`}
                                             src={cake.src}
                                             alt='cheesecake'
@@ -294,14 +297,14 @@ export default function Home() {
                                 Our brownies are made with the finest ingredients, ensuring a rich, fudgy, and decadent
                                 treat. Order yours today.
                             </p>
-                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
+                            <div className='px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     brownies.map((brownie, index) => (
                                         <Image
                                             key={index}
                                             className={`
-                                                w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                snap-center ${brownie.overrides
+                                                w-72 h-96 object-cover flex-shrink-0 rounded-md snap-center
+                                                sm:w-full lg:w-96 ${brownie.overrides
                                             }`}
                                             src={brownie.src}
                                             alt='brownies'
@@ -352,14 +355,14 @@ export default function Home() {
                                 chewy center. Check our speciality Kinder chocolate chunk cookies. Or check in for our
                                 seasonal flavors. Treat yourself today!
                             </p>
-                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
+                            <div className='px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     cookies.map((cookie, index) => (
                                         <Image
                                             key={index}
                                             className={`
-                                                w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                snap-center ${cookie.overrides
+                                                w-72 h-96 object-cover flex-shrink-0 rounded-md snap-center
+                                                sm:w-full lg:w-96 ${cookie.overrides
                                             }`}
                                             src={cookie.src}
                                             alt='cookies'
@@ -410,14 +413,14 @@ export default function Home() {
                                 perfect for any occasion. Whether you prefer classic ganache or adventurous flavor
                                 combinations, our truffles will satisfy your sweet cravings!
                             </p>
-                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
+                            <div className='px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     truffles.map((truffle, index) => (
                                         <Image
                                             key={index}
                                             className={`
-                                                w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                snap-center ${truffle.overrides
+                                                w-72 h-96 object-cover flex-shrink-0 rounded-md snap-center
+                                                sm:w-full lg:w-96 ${truffle.overrides
                                             }`}
                                             src={truffle.src}
                                             alt='truffles'
@@ -468,14 +471,14 @@ export default function Home() {
                                 Perfect for breakfast or a snack, grab one (or two) and enjoy the goodness in every
                                 bite!
                             </p>
-                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
+                            <div className='px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     muffins.map((muffin, index) => (
                                         <Image
                                             key={index}
                                             className={`
-                                                w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                snap-center ${muffin.overrides
+                                                w-72 h-96 object-cover flex-shrink-0 rounded-md snap-center
+                                                sm:w-full lg:w-96 ${muffin.overrides
                                             }`}
                                             src={muffin.src}
                                             alt='muffins'
