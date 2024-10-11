@@ -13,9 +13,8 @@ const config: Config = {
                 padding: '0.5rem'
             },
             fontFamily: {
-                sans: ['var(--font-open-sans)'],
-                serif: ['var(--font-lora)'],
-                brico: ['var(--font-bricolage-grotesque)']
+                sans: ['var(--font-montserrat)'],
+                script: ['var(--font-sacramento)']
             },
             backgroundImage: {
                 hero: 'url(\'/static/pastries.jpg\')'
