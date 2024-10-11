@@ -2,12 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --scroll-padding: 0px;
+}
+
 html {
-    @apply scroll-smooth
+    @apply scroll-smooth scroll-pt-[var(--scroll-padding)]
 }
 
 body {
-    @apply font-sans bg-background-950 text-text-50
+    @apply font-sans bg-background text-text
 }
 
 h1,
@@ -25,20 +29,16 @@ strong {
 
 button,
 a {
-    @apply focus-visible:outline-text-50
+    @apply focus-visible:outline-text
 }
 
 .btn {
     padding: 0.5em 1em;
-    @apply font-medium rounded-md leading-7 no-underline focus-visible:outline-primary-50
+    @apply font-medium rounded-md leading-7 no-underline focus-visible:outline-primary
 }
 
 .btn-primary {
-    @apply bg-primary-500 transition-transform ease-linear duration-200 hover:-translate-y-1 hover:shadow-primary-500 hover:shadow-2xl
-}
-
-.btn-secondary {
-    @apply bg-secondary-700 transition-transform ease-linear duration-200 hover:-translate-y-1
+    @apply bg-secondary transition-transform ease-linear duration-200 hover:-translate-y-1 hover:shadow-primary hover:shadow-2xl
 }
 
 .section {
