@@ -1,24 +1,18 @@
 import type {Metadata} from 'next';
-import {Lora, Open_Sans, Bricolage_Grotesque} from 'next/font/google';
+import {Sacramento, Montserrat} from 'next/font/google';
 import './globals.css';
 import React from 'react';
 
-const lora = Lora({
+const montserrat = Montserrat({
     subsets: ['latin'],
-    variable: '--font-lora',
+    variable: '--font-montserrat',
     display: 'swap'
 });
 
-const openSans = Open_Sans({
+const sacramento = Sacramento({
     subsets: ['latin'],
-    variable: '--font-open-sans',
-    display: 'swap'
-});
-
-const bricolageGrotesque = Bricolage_Grotesque({
-    subsets: ['latin'],
-    variable: '--font-bricolage-grotesque',
-    display: 'swap'
+    variable: '--font-sacramento',
+    weight: ['400']
 });
 
 export const metadata: Metadata = {
@@ -29,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang='en'>
-            <body className={`${lora.variable} ${openSans.variable} ${bricolageGrotesque.variable}`}>
+            <body className={`${montserrat.variable} ${sacramento.variable}`}>
                 {children}
             </body>
         </html>

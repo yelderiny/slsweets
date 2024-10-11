@@ -148,27 +148,29 @@ export default function Home() {
 
     return (
         <>
-            <div className='bg-hero bg-cover h-dvh bg-center'>
-                <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
-                <MobileNav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+            <div className='relative bg-hero bg-cover h-dvh bg-center  '>
+                <div className='absolute inset-0 bg-black/40'>
+                    <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+                    <MobileNav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
 
-                {/* hero */}
-                <section className='
+                    {/* hero */}
+                    <section className='
                     continer flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
                     text-background lg:gap-6
                 '>
-                    <h1 className='text-4xl font-brico font-black lg:text-5xl xl:text-6xl'>
-                        From Our Oven <br/> Right To Your Heart
-                    </h1>
-                    <a
-                        className='btn btn-primary inline-block xl:text-lg'
-                        href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                    >
-                        Order Now
-                    </a>
-                </section>
+                        <h1 className='text-4xl font-script sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl'>
+                            From Our Oven <br/> Right To Your Heart
+                        </h1>
+                        <a
+                            className='btn btn-primary inline-block text-sm xl:text-lg'
+                            href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                        >
+                            Order Now
+                        </a>
+                    </section>
+                </div>
             </div>
             <div>
                 <main className='space-y-20 lg:space-y-32'>
@@ -181,7 +183,7 @@ export default function Home() {
                             sm:gap-4 lg:gap-8 xl:gap-16
                         '>
                         <div className='order-1 space-y-8'>
-                            <h2 className='text-2xl font-serif leading-4 font-medium text-center lg:text-3xl'>
+                            <h2 className='title text-center'>
                                 <span className='relative'>Welcome to SLSweets<span className=' absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
@@ -221,9 +223,9 @@ export default function Home() {
                     {/* cheesecake */}
                     <section id='specialties' className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-brico text-center'>
+                            <h2 className='text-xs font-medium font-sans text-center'>
                                 come for&#xa0;
-                                <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Cheesecake
+                                <span className='relative title'>The Cheesecake
                                 <span className='absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
@@ -250,10 +252,8 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-10 sm:mt-10'>
-                            <h2 className='
-                                text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
-                            '>
-                                <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
+                            <h2 className='subtitle sm:flex-1 sm:text-end sm:self-center'>
+                                <span className='relative'>Our Prices<span className='absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
                             <div className='sm:border-l sm:border-text sm:h-80'></div>
@@ -283,9 +283,9 @@ export default function Home() {
                     {/* brownies */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-brico text-center'>
+                            <h2 className='text-xs font-medium font-sans text-center'>
                                 stay for&#xa0;
-                                <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Brownies
+                                <span className='relative title'>The Brownies
                                 <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
@@ -312,9 +312,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-10 sm:mt-10'>
-                            <h2 className='
-                                text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
-                            '>
+                            <h2 className='subtitle sm:flex-1 sm:text-end sm:self-center'>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
@@ -341,9 +339,9 @@ export default function Home() {
                     {/* cookies */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-brico text-center'>
+                            <h2 className='text-xs font-medium font-sans text-center'>
                                 relish in&#xa0;
-                                <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Cookies
+                                <span className='relative title'>The Cookies
                                 <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
@@ -372,9 +370,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-10 sm:mt-10'>
-                            <h2 className='
-                                text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
-                            '>
+                            <h2 className='subtitle sm:flex-1 sm:text-end sm:self-center'>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
@@ -401,9 +397,9 @@ export default function Home() {
                     {/* truffles */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-brico text-center'>
+                            <h2 className='text-xs font-medium font-sans text-center'>
                                 indulge in&#xa0;
-                                <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Truffles
+                                <span className='relative title'>The Truffles
                                 <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
@@ -432,9 +428,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-10 sm:mt-10'>
-                            <h2 className='
-                                text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
-                            '>
+                            <h2 className='subtitle sm:flex-1 sm:text-end sm:self-center'>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
@@ -461,9 +455,9 @@ export default function Home() {
                     {/* muffins */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-brico text-center'>
+                            <h2 className='text-xs font-medium font-sans text-center'>
                                 leave with&#xa0;
-                                <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Muffins
+                                <span className='relative title'>The Muffins
                                 <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
@@ -492,9 +486,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='mt-8 space-y-4 sm:space-y-0 sm:flex sm:gap-10 sm:mt-10'>
-                            <h2 className='
-                                text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
-                            '>
+                            <h2 className='subtitle sm:flex-1 sm:text-end sm:self-center'>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
                                 bg-secondary -z-10 opacity-30'/></span>
                             </h2>
@@ -520,7 +512,7 @@ export default function Home() {
 
                     {/* contact us */}
                     <section id='contact' className='container space-y-4'>
-                        <h2 className='text-2xl font-serif leading-4 text-center lg:text-3xl'>
+                        <h2 className='title text-center'>
                             <span className='relative'>Contact Us<span className=' absolute inset-x-0 bottom-0
                              h-2 bg-secondary -z-10 opacity-30'/></span>
                         </h2>

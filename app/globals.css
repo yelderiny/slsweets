@@ -44,3 +44,11 @@ a {
 .section {
     @apply mt-20 lg:mt-40
 }
+
+.title {
+    @apply font-script text-3xl md:text-4xl lg:text-5xl
+}
+
+.subtitle {
+    @apply font-sans font-light uppercase text-2xl md:text-3xl
+}
