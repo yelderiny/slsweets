@@ -155,13 +155,13 @@ export default function Home() {
                 {/* hero */}
                 <section className='
                     continer flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
-                    text-background-950 lg:gap-6
+                    text-background lg:gap-6
                 '>
                     <h1 className='text-4xl font-brico font-black lg:text-5xl xl:text-6xl'>
                         From Our Oven <br/> Right To Your Heart
                     </h1>
                     <a
-                        className='btn btn-secondary inline-block xl:text-lg'
+                        className='btn btn-primary inline-block xl:text-lg'
                         href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                         target='_blank'
                         rel='noopener noreferrer'
@@ -177,13 +177,13 @@ export default function Home() {
                     <section
                         id='story'
                         className='
-                            container mt-10 space-y-4 scroll-mt-20 sm:space-y-0 sm:flex sm:justify-center sm:items-center
-                            sm:gap-4 lg:gap-8 lg:scroll-mt-28 xl:gap-16 xl:scroll-mt-32
+                            container mt-10 space-y-4 sm:space-y-0 sm:flex sm:justify-center sm:items-center
+                            sm:gap-4 lg:gap-8 xl:gap-16
                         '>
                         <div className='order-1 space-y-8'>
                             <h2 className='text-2xl font-serif leading-4 font-medium text-center lg:text-3xl'>
                                 <span className='relative'>Welcome to SLSweets<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
                             <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
                                 My love for baking began in my kitchen, where I found solace in the art of
@@ -196,7 +196,7 @@ export default function Home() {
                             </p>
                             <div className='text-center'>
                                 <a
-                                    className='btn btn-secondary inline-block text-sm lg:text-base'
+                                    className='btn btn-primary inline-block text-sm lg:text-base'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -219,12 +219,12 @@ export default function Home() {
                     </section>
 
                     {/* cheesecake */}
-                    <section id='specialties' className='container scroll-mt-20 lg:scroll-mt-28 xl:scroll-mt-32'>
+                    <section id='specialties' className='container'>
                         <div className='space-y-4'>
                             <h2 className='text-xs font-medium font-brico text-center'>
                                 come for&#xa0;
                                 <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Cheesecake
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -254,9 +254,9 @@ export default function Home() {
                                 text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
                             '>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
-                            <div className='sm:border-l sm:border-text-50 sm:h-80'></div>
+                            <div className='sm:border-l sm:border-text sm:h-80'></div>
                             <div className='flex-1 text-left self-center text-sm lg:text-base'>
                                 <p className='font-bold mb-2'>Packs:</p>
                                 <ul className='list-disc list-inside pl-4 space-y-1 mb-2'>
@@ -268,7 +268,7 @@ export default function Home() {
                                 <p className='mb-2'><span className='font-bold'>1kg medium cake: </span>AED 70</p>
                                 <p className='mb-5'><span className='font-bold'>2kg large cake: </span>AED 140</p>
                                 <a
-                                    className='btn btn-secondary inline-block'
+                                    className='btn btn-primary inline-block'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -286,7 +286,7 @@ export default function Home() {
                             <h2 className='text-xs font-medium font-brico text-center'>
                                 stay for&#xa0;
                                 <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Brownies
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -316,9 +316,9 @@ export default function Home() {
                                 text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
                             '>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
-                            <div className='sm:border-l sm:border-text-50 sm:h-80'></div>
+                            <div className='sm:border-l sm:border-text sm:h-80'></div>
                             <div className='flex-1 text-left self-center text-sm lg:text-base'>
                                 <ul className='space-y-1 mb-5'>
                                     <li><span className='font-bold'>Pack of four: </span>AED 24</li>
@@ -326,7 +326,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 72</li>
                                 </ul>
                                 <a
-                                    className='btn btn-secondary inline-block'
+                                    className='btn btn-primary inline-block'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -344,7 +344,7 @@ export default function Home() {
                             <h2 className='text-xs font-medium font-brico text-center'>
                                 relish in&#xa0;
                                 <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Cookies
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -376,9 +376,9 @@ export default function Home() {
                                 text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
                             '>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
-                            <div className='sm:border-l sm:border-text-50 sm:h-80'></div>
+                            <div className='sm:border-l sm:border-text sm:h-80'></div>
                             <div className='flex-1 text-left self-center text-sm lg:text-base'>
                                 <ul className='space-y-1 mb-5'>
                                     <li><span className='font-bold'>Pack of four: </span>AED 20</li>
@@ -386,7 +386,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 60</li>
                                 </ul>
                                 <a
-                                    className='btn btn-secondary inline-block'
+                                    className='btn btn-primary inline-block'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -404,7 +404,7 @@ export default function Home() {
                             <h2 className='text-xs font-medium font-brico text-center'>
                                 indulge in&#xa0;
                                 <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Truffles
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -436,9 +436,9 @@ export default function Home() {
                                 text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
                             '>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
-                            <div className='sm:border-l sm:border-text-50 sm:h-80'></div>
+                            <div className='sm:border-l sm:border-text sm:h-80'></div>
                             <div className='flex-1 text-left self-center text-sm lg:text-base'>
                                 <ul className='space-y-1 mb-5'>
                                     <li><span className='font-bold'>Pack of four: </span>AED 16</li>
@@ -446,7 +446,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 48</li>
                                 </ul>
                                 <a
-                                    className='btn btn-secondary inline-block'
+                                    className='btn btn-primary inline-block'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -464,7 +464,7 @@ export default function Home() {
                             <h2 className='text-xs font-medium font-brico text-center'>
                                 leave with&#xa0;
                                 <span className='relative text-2xl font-serif leading-4 lg:text-3xl'>The Muffins
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary-700 -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -496,9 +496,9 @@ export default function Home() {
                                 text-2xl font-serif leading-4 sm:flex-1 sm:text-end sm:self-center lg:text-3xl
                             '>
                                 <span className='relative'>Our Prices<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary-700 -z-10 opacity-30'/></span>
+                                bg-secondary -z-10 opacity-30'/></span>
                             </h2>
-                            <div className='sm:border-l sm:border-text-50 sm:h-80'></div>
+                            <div className='sm:border-l sm:border-text sm:h-80'></div>
                             <div className='flex-1 text-left self-center text-sm lg:text-base'>
                                 <ul className='space-y-1 mb-5'>
                                     <li><span className='font-bold'>Pack of four: </span>AED 35</li>
@@ -506,7 +506,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 100</li>
                                 </ul>
                                 <a
-                                    className='btn btn-secondary inline-block'
+                                    className='btn btn-primary inline-block'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -522,7 +522,7 @@ export default function Home() {
                     <section id='contact' className='container space-y-4'>
                         <h2 className='text-2xl font-serif leading-4 text-center lg:text-3xl'>
                             <span className='relative'>Contact Us<span className=' absolute inset-x-0 bottom-0
-                             h-2 bg-secondary-700 -z-10 opacity-30'/></span>
+                             h-2 bg-secondary -z-10 opacity-30'/></span>
                         </h2>
                         <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
                             We&apos;re super easy to get in contact with and we do everything over Instagram. If you
@@ -531,7 +531,7 @@ export default function Home() {
                         </p>
                         <div className='text-center'>
                             <a
-                                className='btn btn-secondary inline-block'
+                                className='btn btn-primary inline-block'
                                 href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                 target='_blank'
                                 rel='noopener noreferrer'
@@ -543,7 +543,7 @@ export default function Home() {
                 </main>
 
                 {/* footer */}
-                <footer className='container mt-20 flex justify-between text-sm text-text-800 p-4'>
+                <footer className='mt-20 flex justify-between text-sm text-gray-100 p-4 bg-primary'>
                     <p>&copy; 2024 SLSweets. All rights reserved.</p>
                     <p className='text-right'>
                         By&#xa0;
