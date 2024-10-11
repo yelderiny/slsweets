@@ -13,7 +13,7 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
         <div
             className={`
                 fixed inset-0 bg-background z-30 flex flex-col justify-evenly items-center
-                gap-4 opacity-0 pointer-events-none transition-opacity duration-100 ease-linear font-serif ${
+                gap-4 opacity-0 pointer-events-none transition-opacity duration-100 ease-linear font-sans ${
                 isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0'
             }`}>
             <button
@@ -65,7 +65,7 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
                 >
                     <FaInstagram className='text-3xl m-auto mb-4'/>
                 </a>
-                <button className='btn btn-primary'>Order Now</button>
+                <button className='btn btn-primary inline-block text-background'>Order Now</button>
             </div>
         </div>
     );
