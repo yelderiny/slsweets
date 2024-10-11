@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    @apply font-sans bg-background text-text
+    @apply font-sans font-light bg-background text-text
 }
 
 h1,
@@ -33,16 +33,12 @@ a {
 }
 
 .btn {
-    padding: 0.5em 1em;
-    @apply font-medium rounded-md leading-7 no-underline focus-visible:outline-primary
+    padding: 1em 1.5em;
+    @apply font-medium rounded-lg no-underline focus-visible:outline-primary
 }
 
 .btn-primary {
     @apply bg-secondary transition-transform ease-linear duration-200 hover:-translate-y-1 hover:shadow-primary hover:shadow-2xl
-}
-
-.section {
-    @apply mt-20 lg:mt-40
 }
 
 .title {

@@ -184,8 +184,9 @@ export default function Home() {
                         '>
                         <div className='order-1 space-y-8'>
                             <h2 className='title text-center'>
-                                <span className='relative'>Welcome to SLSweets<span className=' absolute inset-x-0 bottom-0 h-2
-                                bg-secondary -z-10 opacity-30'/></span>
+                                <span className='relative'>Welcome to SLSweets
+                                    <span className=' absolute inset-x-0 bottom-4 h-2 bg-secondary -z-10 opacity-30'/>
+                                </span>
                             </h2>
                             <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
                                 My love for baking began in my kitchen, where I found solace in the art of
@@ -198,7 +199,7 @@ export default function Home() {
                             </p>
                             <div className='text-center'>
                                 <a
-                                    className='btn btn-primary inline-block text-sm lg:text-base'
+                                    className='btn btn-primary inline-block text-sm text-background lg:text-base'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -223,24 +224,24 @@ export default function Home() {
                     {/* cheesecake */}
                     <section id='specialties' className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-sans text-center'>
+                            <h2 className='text-xs text-center'>
                                 come for&#xa0;
                                 <span className='relative title'>The Cheesecake
-                                <span className='absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
                                 Freshly Baked with Love. Our cheesecakes come in a variety of flavors and sizes:
                                 Blueberry, Raspberry, Strawberry, Salted Caramel, and Lotus! Order yours today.
                             </p>
-                            <div className='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4'>
+                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     cheesecake.map((cake, index) => (
                                         <Image
                                             key={index}
                                             className={`
                                                 w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96 
-                                                ${cake.overrides
+                                                snap-center ${cake.overrides
                                             }`}
                                             src={cake.src}
                                             alt='cheesecake'
@@ -268,7 +269,7 @@ export default function Home() {
                                 <p className='mb-2'><span className='font-bold'>1kg medium cake: </span>AED 70</p>
                                 <p className='mb-5'><span className='font-bold'>2kg large cake: </span>AED 140</p>
                                 <a
-                                    className='btn btn-primary inline-block'
+                                    className='btn btn-primary inline-block text-background'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -283,24 +284,24 @@ export default function Home() {
                     {/* brownies */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-sans text-center'>
+                            <h2 className='text-xs text-center'>
                                 stay for&#xa0;
                                 <span className='relative title'>The Brownies
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
                                 Our brownies are made with the finest ingredients, ensuring a rich, fudgy, and decadent
                                 treat. Order yours today.
                             </p>
-                            <div className='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4'>
+                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     brownies.map((brownie, index) => (
                                         <Image
                                             key={index}
                                             className={`
                                                 w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                 ${brownie.overrides
+                                                snap-center ${brownie.overrides
                                             }`}
                                             src={brownie.src}
                                             alt='brownies'
@@ -324,7 +325,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 72</li>
                                 </ul>
                                 <a
-                                    className='btn btn-primary inline-block'
+                                    className='btn btn-primary inline-block text-background'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -339,10 +340,10 @@ export default function Home() {
                     {/* cookies */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-sans text-center'>
+                            <h2 className='text-xs text-center'>
                                 relish in&#xa0;
                                 <span className='relative title'>The Cookies
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -351,14 +352,14 @@ export default function Home() {
                                 chewy center. Check our speciality Kinder chocolate chunk cookies. Or check in for our
                                 seasonal flavors. Treat yourself today!
                             </p>
-                            <div className='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4'>
+                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     cookies.map((cookie, index) => (
                                         <Image
                                             key={index}
                                             className={`
                                                 w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                ${cookie.overrides
+                                                snap-center ${cookie.overrides
                                             }`}
                                             src={cookie.src}
                                             alt='cookies'
@@ -382,7 +383,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 60</li>
                                 </ul>
                                 <a
-                                    className='btn btn-primary inline-block'
+                                    className='btn btn-primary inline-block text-background'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -397,10 +398,10 @@ export default function Home() {
                     {/* truffles */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-sans text-center'>
+                            <h2 className='text-xs text-center'>
                                 indulge in&#xa0;
                                 <span className='relative title'>The Truffles
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -409,14 +410,14 @@ export default function Home() {
                                 perfect for any occasion. Whether you prefer classic ganache or adventurous flavor
                                 combinations, our truffles will satisfy your sweet cravings!
                             </p>
-                            <div className='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4'>
+                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     truffles.map((truffle, index) => (
                                         <Image
                                             key={index}
                                             className={`
                                                 w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                ${truffle.overrides
+                                                snap-center ${truffle.overrides
                                             }`}
                                             src={truffle.src}
                                             alt='truffles'
@@ -440,7 +441,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 48</li>
                                 </ul>
                                 <a
-                                    className='btn btn-primary inline-block'
+                                    className='btn btn-primary inline-block text-background'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -455,10 +456,10 @@ export default function Home() {
                     {/* muffins */}
                     <section className='container'>
                         <div className='space-y-4'>
-                            <h2 className='text-xs font-medium font-sans text-center'>
+                            <h2 className='text-xs text-center'>
                                 leave with&#xa0;
                                 <span className='relative title'>The Muffins
-                                <span className=' absolute inset-x-0 bottom-0 h-2 bg-secondary -z-10 opacity-30'/>
+                                <span className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                                 </span>
                             </h2>
                             <p className='text-sm text-center text-gray-700 max-w-prose mx-auto lg:text-base'>
@@ -467,14 +468,14 @@ export default function Home() {
                                 Perfect for breakfast or a snack, grab one (or two) and enjoy the goodness in every
                                 bite!
                             </p>
-                            <div className='space-y-4 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4'>
+                            <div className='px-12 flex gap-4 overflow-x-scroll snap-x snap-mandatory sm:px-0 sm:grid sm:grid-cols-2'>
                                 {
                                     muffins.map((muffin, index) => (
                                         <Image
                                             key={index}
                                             className={`
                                                 w-full h-auto object-cover rounded-md mx-auto sm:mx-0 sm:h-96 lg:w-96
-                                                ${muffin.overrides
+                                                snap-center ${muffin.overrides
                                             }`}
                                             src={muffin.src}
                                             alt='muffins'
@@ -498,7 +499,7 @@ export default function Home() {
                                     <li><span className='font-bold'>Pack of twelve: </span>AED 100</li>
                                 </ul>
                                 <a
-                                    className='btn btn-primary inline-block'
+                                    className='btn btn-primary inline-block text-background'
                                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                     target='_blank'
                                     rel='noopener noreferrer'
@@ -513,8 +514,9 @@ export default function Home() {
                     {/* contact us */}
                     <section id='contact' className='container space-y-4'>
                         <h2 className='title text-center'>
-                            <span className='relative'>Contact Us<span className=' absolute inset-x-0 bottom-0
-                             h-2 bg-secondary -z-10 opacity-30'/></span>
+                            <span className='relative'>Contact Us
+                                <span className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
+                            </span>
                         </h2>
                         <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
                             We&apos;re super easy to get in contact with and we do everything over Instagram. If you
@@ -523,7 +525,7 @@ export default function Home() {
                         </p>
                         <div className='text-center'>
                             <a
-                                className='btn btn-primary inline-block'
+                                className='btn btn-primary inline-block text-background'
                                 href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                                 target='_blank'
                                 rel='noopener noreferrer'
