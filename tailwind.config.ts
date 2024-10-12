@@ -14,7 +14,7 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ['var(--font-montserrat)'],
-                script: ['var(--font-sacramento)']
+                script: ['var(--font-satisfy)']
             },
             backgroundImage: {
                 hero: 'url(\'/static/pastries.jpg\')'

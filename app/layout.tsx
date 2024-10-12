@@ -1,5 +1,5 @@
 import type {Metadata} from 'next';
-import {Sacramento, Montserrat} from 'next/font/google';
+import {Montserrat, Satisfy} from 'next/font/google';
 import './globals.css';
 import React from 'react';
 
@@ -9,9 +9,9 @@ const montserrat = Montserrat({
     display: 'swap'
 });
 
-const sacramento = Sacramento({
+const satisfy  = Satisfy({
     subsets: ['latin'],
-    variable: '--font-sacramento',
+    variable: '--font-satisfy',
     weight: ['400']
 });
 
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
     return (
         <html lang='en'>
-            <body className={`${montserrat.variable} ${sacramento.variable}`}>
+            <body className={`${montserrat.variable} ${satisfy.variable}`}>
                 {children}
             </body>
         </html>
