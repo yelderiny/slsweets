@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React, {FC} from 'react';
 import {FaInstagram} from 'react-icons/fa';
 import {LiaTimesSolid} from 'react-icons/lia';
+import Link from 'next/link';
 
 interface MobileMenuProps {
     isMenuOpen: boolean;
@@ -47,6 +48,10 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
                     Our Specialties
                     <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
                 </a>
+                <Link onClick={toggleMenu} className='text-3xl relative' href='/menu'>
+                    Our Menu
+                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
+                </Link>
                 <a onClick={toggleMenu} className='text-3xl relative' href='#contact'>
                     Contact Us
                     <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
@@ -57,7 +62,7 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
                 transition-transform duration-300 ease-in ${
                 isMenuOpen ? 'translate-y-0' : 'translate-y-5'
             }`}>
-                <a
+            <a
                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                     target='_blank'
                     rel='noopener noreferrer'

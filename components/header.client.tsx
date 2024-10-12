@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React, {FC, useEffect, useState} from 'react';
 import {FaInstagram} from 'react-icons/fa';
 import {LiaBarsSolid} from 'react-icons/lia';
+import Link from 'next/link';
 
 interface HeaderProps {
     isMenuOpen: boolean,
@@ -69,6 +70,7 @@ const Header: FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
             }`}>
                 <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#story'>Our Story</a>
                 <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#specialties'>Our Specialties</a>
+                <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/menu'>Our Menu</Link>
                 <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#contact'>Contact Us</a>
             </nav>
             <div>
