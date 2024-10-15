@@ -24,7 +24,7 @@ h6 {
 }
 
 strong {
-    @apply font-black
+    @apply font-bold
 }
 
 button,
