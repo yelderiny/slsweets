@@ -4,41 +4,51 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 import Header from '@/components/header.client';
 import MobileNav from '@/components/mobile-nav.client';
-import {img} from '@/types/img';
 import Link from 'next/link';
+import {speciality} from '@/types/img';
 
 export default function Home() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
-    const specialities: img[] = [
+    const specialities: speciality[] = [
         {
             src: '/static/cheesecake/cheesecake8.jpg',
             width: 2722,
             height: 4083,
+            description: 'Blueberry Cheesecake',
+            price: 20,
             overrides: ''
         },
         {
             src: '/static/brownies/brownies2.jpg',
             width: 2466,
             height: 3648,
+            description: 'Fudgy Brownies',
+            price: 24,
             overrides: 'object-right'
         },
         {
             src: '/static/cookies/cookies5.jpg',
             width: 768,
             height: 1024,
+            description: 'Kinder Cookies',
+            price: 20,
             overrides: ''
         },
         {
             src: '/static/truffles/truffles3.jpg',
             width: 1000,
             height: 1500,
+            description: 'Chocolate Cake Truffles',
+            price: 16,
             overrides: ''
         },
         {
             src: '/static/muffins/muffin2.jpg',
             width: 1005,
             height: 1256,
+            description: 'Chocolate Chip Muffins',
+            price: 35,
             overrides: ''
         }
     ];
@@ -122,7 +132,7 @@ export default function Home() {
                 {/* specialities */}
                 <section id='specialties' className='container space-y-4'>
                     <h2 className='title text-center'>
-                        <span className='relative'>Our Specialties
+                        <span className='relative'>Our Specialities
                             <span
                                 className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                         </span>
@@ -143,18 +153,23 @@ export default function Home() {
                         sm:px-0 sm:py-0 sm:overflow-x-visible sm:snap-none sm:flex-wrap sm:justify-center
                     '>
                         {
-                            specialities.map((speciality, index) => (
-                                <Image
-                                    key={index}
-                                    className={`
-                                        w-72 h-auto object-cover flex-shrink-0 rounded-md snap-center lg:w-96
-                                        ${speciality.overrides}
+                            specialities.map((item, index) => (
+                                <div key={index} className='flex-shrink-0'>
+                                    <Image
+                                        className={`
+                                        w-72 h-96 object-cover rounded-md snap-center lg:w-96
+                                        ${item.overrides}
                                     `}
-                                    src={speciality.src}
-                                    alt={`speciality-${index}`}
-                                    width={speciality.width}
-                                    height={speciality.height}
-                                />
+                                        src={item.src}
+                                        alt={`speciality-${index}`}
+                                        width={item.width}
+                                        height={item.height}
+                                    />
+                                    <p className='text-base mt-2 uppercase'>{item.description}</p>
+                                    <p className='text-xs mt-4'>
+                                        from <strong className='text-base text-secondary'>AED {item.price}</strong>
+                                    </p>
+                                </div>
                             ))
                         }
                     </div>
