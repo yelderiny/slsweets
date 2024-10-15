@@ -1,14 +1,14 @@
 import Image from 'next/image';
-import React, {FC} from 'react';
+import React from 'react';
 import {FaInstagram} from 'react-icons/fa';
 import {LiaTimesSolid} from 'react-icons/lia';
+import Link from 'next/link';
+import {useAppContext} from '@/app/context';
 
-interface MobileMenuProps {
-    isMenuOpen: boolean;
-    toggleMenu: () => void;
-}
 
-const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
+const MobileNav  = () => {
+    const { isMenuOpen, toggleMenu } = useAppContext();
+
     return (
         <div
             className={`
@@ -39,25 +39,25 @@ const MobileNav: FC<MobileMenuProps> = ({ isMenuOpen, toggleMenu }) => {
                 flex flex-col items-center gap-4 transition-transform duration-300 ease-in ${
                 isMenuOpen ? 'translate-y-0' : 'translate-y-5'
             }`}>
-                <a onClick={toggleMenu} className='text-3xl relative' href='#story'>
-                    Our Story
-                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
-                </a>
-                <a onClick={toggleMenu} className='text-3xl relative' href='#specialties'>
+                <Link onClick={toggleMenu} className='text-3xl relative' href='/#specialties'>
                     Our Specialties
                     <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
-                </a>
-                <a onClick={toggleMenu} className='text-3xl relative' href='#contact'>
+                </Link>
+                <Link onClick={toggleMenu} className='text-3xl relative' href='/menu'>
+                    Our Menu
+                    <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
+                </Link>
+                <Link onClick={toggleMenu} className='text-3xl relative' href='/#contact'>
                     Contact Us
                     <span className='absolute inset-x-0 -bottom-0.5 h-2 bg-secondary -z-10 opacity-30'/>
-                </a>
+                </Link>
             </nav>
             <div className='border border-text-50 pr-6'/>
             <div className={`
                 transition-transform duration-300 ease-in ${
                 isMenuOpen ? 'translate-y-0' : 'translate-y-5'
             }`}>
-                <a
+            <a
                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                     target='_blank'
                     rel='noopener noreferrer'

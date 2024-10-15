@@ -14,7 +14,7 @@ const config: Config = {
             },
             fontFamily: {
                 sans: ['var(--font-montserrat)'],
-                script: ['var(--font-sacramento)']
+                script: ['var(--font-satisfy)']
             },
             backgroundImage: {
                 hero: 'url(\'/static/pastries.jpg\')'
@@ -24,7 +24,7 @@ const config: Config = {
                 background: '#fafaf9',
                 primary: '#f4cfc3',
                 secondary: '#ebac93',
-                accent: '#ae8f84',
+                accent: '#fbeee9',
             },
 
         }
