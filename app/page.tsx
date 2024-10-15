@@ -1,16 +1,15 @@
 'use client';
 
 import Image from 'next/image';
-import React, {useState} from 'react';
+import React from 'react';
 import Header from '@/components/header.client';
 import MobileNav from '@/components/mobile-nav.client';
 import Link from 'next/link';
 import {speciality} from '@/types/img';
 import {faq} from '@/types/faq';
+import Footer from '@/components/footer.client';
 
 export default function Home() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
     const specialities: speciality[] = [
         {
             src: '/static/cheesecake/cheesecake8.jpg',
@@ -106,14 +105,14 @@ export default function Home() {
 
     return (
         <>
-            <div className='relative bg-hero bg-cover h-dvh bg-center  '>
+            <div className='relative bg-hero bg-cover h-dvh bg-center'>
                 <div className='absolute inset-0 bg-black/40'>
-                    <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
-                    <MobileNav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu}/>
+                    <Header/>
+                    <MobileNav/>
 
                     {/* hero */}
                     <section className='
-                    continer flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
+                    container flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
                     text-background lg:gap-6
                 '>
                         <h1 className='text-5xl font-script sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl'>
@@ -131,7 +130,6 @@ export default function Home() {
                 </div>
             </div>
             <main className='space-y-20 lg:space-y-32'>
-
                 {/* story */}
                 <section
                     id='story'
@@ -278,20 +276,7 @@ export default function Home() {
                 </section>
             </main>
 
-            {/* footer */}
-            <footer className='mt-20 flex justify-between text-sm text-white p-4 bg-primary'>
-                <p>&copy; 2024 SLSweets. All rights reserved.</p>
-                <p className='text-right'>
-                    By&#xa0;
-                    <a href='https://www.linkedin.com/in/yelderiny'
-                       target='_blank'
-                       rel='noopener noreferrer'
-                       className='font-bold'
-                    >
-                        Youssef Elderiny
-                    </a>
-                </p>
-            </footer>
+            <Footer/>
         </>
     );
 }
