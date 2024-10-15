@@ -4,3 +4,8 @@ export type img = {
     height: number;
     overrides: string;
 }
+
+export type speciality = img & {
+    description: string;
+    price: number;
+};
