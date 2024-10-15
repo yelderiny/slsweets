@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {Montserrat, Satisfy} from 'next/font/google';
 import './globals.css';
 import React from 'react';
+import {AppProvider} from '@/app/context';
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -9,7 +10,7 @@ const montserrat = Montserrat({
     display: 'swap'
 });
 
-const satisfy  = Satisfy({
+const satisfy = Satisfy({
     subsets: ['latin'],
     variable: '--font-satisfy',
     weight: ['400']
@@ -24,7 +25,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     return (
         <html lang='en'>
             <body className={`${montserrat.variable} ${satisfy.variable}`}>
-                {children}
+                <AppProvider>
+                    {children}
+                </AppProvider>
             </body>
         </html>
     );

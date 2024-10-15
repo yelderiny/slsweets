@@ -5,13 +5,14 @@ import React, {FC, useEffect, useState} from 'react';
 import {FaInstagram} from 'react-icons/fa';
 import {LiaBarsSolid} from 'react-icons/lia';
 import Link from 'next/link';
+import {useAppContext} from '@/app/context';
 
 interface HeaderProps {
-    isMenuOpen: boolean,
-    toggleMenu: () => void
+    override?: boolean
 }
 
-const Header: FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
+const Header: FC<HeaderProps> = ({ override = false }) => {
+    const { isMenuOpen, toggleMenu } = useAppContext()
     const [hasScrolled, setHasScrolled] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -55,7 +56,7 @@ const Header: FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
     return (
         <header className={` 
             flex justify-between items-center p-2 px-4 w-full transition-all duration-300 ease-in-out 
-            md:justify-center ${hasScrolled ? 'bg-primary opacity-95 shadow-lg fixed top-0 left-0 right-0 z-20' : 
+            md:justify-center ${hasScrolled || override ? 'bg-primary opacity-95 shadow-lg fixed top-0 left-0 right-0 z-20' : 
             'bg-transparent'} ${showHeader ? 'translate-y-0' : '-translate-y-full'}
         `}>
             <button
@@ -63,15 +64,14 @@ const Header: FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
                 aria-label='open menu'
                 onClick={toggleMenu}
             >
-                <LiaBarsSolid className={hasScrolled ? 'text-text' : 'text-background'}/>
+                <LiaBarsSolid className={hasScrolled || override ? 'text-text' : 'text-background'}/>
             </button>
             <nav className={`hidden md:flex md:justify-start md:gap-4 md:flex-1 ${
-                hasScrolled ? 'text-gray-800' : 'text-background'
+                hasScrolled || override ? 'text-gray-800' : 'text-background'
             }`}>
-                <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#story'>Our Story</a>
-                <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#specialties'>Our Specialties</a>
+                <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/#specialties'>Our Specialties</Link>
                 <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/menu'>Our Menu</Link>
-                <a className='text-xs font-semibold lg:text-sm xl:text-base' href='#contact'>Contact Us</a>
+                <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/#contact'>Contact Us</Link>
             </nav>
             <div>
                 <Image
@@ -89,11 +89,11 @@ const Header: FC<HeaderProps> = ({ isMenuOpen, toggleMenu }) => {
                     rel='noopener noreferrer'
                     aria-label='Instagram link'
                 >
-                    <FaInstagram className={`text-2xl ${hasScrolled ? 'text-text' : 'text-background'}`}/>
+                    <FaInstagram className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
                 </a>
                 <a className={`
                     hidden btn text-xs font-semibold md:inline-block lg:text-sm xl:text-base ${
-                    hasScrolled ? 'text-gray-800 bg-background' : 'text-background bg-secondary'
+                    hasScrolled || override ? 'text-gray-800 bg-background' : 'text-background bg-secondary'
                 }`}
                    href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                    target='_blank'
