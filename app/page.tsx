@@ -17,6 +17,7 @@ export default function Home() {
             height: 4083,
             description: 'Blueberry Cheesecake',
             price: 20,
+            section: 'cheesecakes',
             overrides: ''
         },
         {
@@ -25,6 +26,7 @@ export default function Home() {
             height: 3648,
             description: 'Fudgy Brownies',
             price: 24,
+            section: 'brownies',
             overrides: 'object-right'
         },
         {
@@ -33,6 +35,7 @@ export default function Home() {
             height: 1024,
             description: 'Kinder Cookies',
             price: 20,
+            section: 'cookies',
             overrides: ''
         },
         {
@@ -41,6 +44,7 @@ export default function Home() {
             height: 1500,
             description: 'Chocolate Cake Truffles',
             price: 16,
+            section: 'truffles',
             overrides: ''
         },
         {
@@ -49,6 +53,7 @@ export default function Home() {
             height: 1256,
             description: 'Chocolate Chip Muffins',
             price: 35,
+            section: 'muffins',
             overrides: ''
         }
     ];
@@ -179,31 +184,34 @@ export default function Home() {
                 </section>
 
                 {/* specialities */}
-                <section id='specialties' className='container space-y-4'>
+                <section id='specialties' className='container'>
                     <h2 className='title text-center'>
                         <span className='relative'>Our Specialities
                             <span
                                 className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
                         </span>
                     </h2>
-                    <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
+                    <p className='text-sm text-center max-w-prose mx-auto mt-4 lg:text-base'>
                         Our menu is filled with a variety of sweet treats that are sure to satisfy your cravings.
                         From <em className='italic font-bold'>decadent cheesecakes</em> to <em
                         className='italic font-bold'>fudgy brownies</em>, we have something for everyone.
                     </p>
-                    <div className='text-center'>
-                        <Link className='btn btn-primary inline-block text-sm lg:text-base' href='/menu'>
+                    <div className='text-center mt-4'>
+                        <Link className='btn btn-primary inline-block text-sm text-background lg:text-base' href='/menu'>
                             View Our Menu
                         </Link>
                     </div>
-
                     <div className='
-                        px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory
+                        px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory mt-8
                         sm:px-0 sm:py-0 sm:overflow-x-visible sm:snap-none sm:flex-wrap sm:justify-center
                     '>
                         {
                             specialities.map((item, index) => (
-                                <div key={index} className='flex-shrink-0'>
+                                <Link
+                                    key={index}
+                                    className='flex-shrink-0 sm:p-4 sm:rounded-md sm:hover:cursor-pointer sm:hover:shadow-lg'
+                                    href={`/menu#${item.section}`}
+                                >
                                     <Image
                                         className={`
                                         w-72 h-96 object-cover rounded-md snap-center lg:w-96
@@ -219,7 +227,7 @@ export default function Home() {
                                         from <strong
                                         className='text-base text-secondary lg:text-lg'>AED {item.price}</strong>
                                     </p>
-                                </div>
+                                </Link>
                             ))
                         }
                     </div>

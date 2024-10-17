@@ -147,7 +147,7 @@ const Page = () => {
 
             <div className='space-y-20 mt-32 lg:space-y-32 lg:mt-52 xl:mt-60'>
                 {/* cheesecake */}
-                <section className='container'>
+                <section id='cheesecakes' className='container'>
                     <div className='space-y-4'>
                         <h2 className='text-xs text-center'>
                             come for&#xa0;
@@ -209,7 +209,7 @@ const Page = () => {
                 </section>
 
                 {/* brownies */}
-                <section className='container'>
+                <section id='brownies' className='container'>
                     <div className='space-y-4'>
                         <h2 className='text-xs text-center'>
                             stay for&#xa0;
@@ -269,7 +269,7 @@ const Page = () => {
                 </section>
 
                 {/* cookies */}
-                <section className='container'>
+                <section id='cookies' className='container'>
                     <div className='space-y-4'>
                         <h2 className='text-xs text-center'>
                             relish in&#xa0;
@@ -331,7 +331,7 @@ const Page = () => {
                 </section>
 
                 {/* truffles */}
-                <section className='container'>
+                <section id='truffles' className='container'>
                     <div className='space-y-4'>
                         <h2 className='text-xs text-center'>
                             indulge in&#xa0;
@@ -392,7 +392,7 @@ const Page = () => {
                 </section>
 
                 {/* muffins */}
-                <section className='container'>
+                <section id='muffins' className='container'>
                     <div className='space-y-4'>
                         <h2 className='text-xs text-center'>
                             leave with&#xa0;

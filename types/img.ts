@@ -8,4 +8,5 @@ export type img = {
 export type speciality = img & {
     description: string;
     price: number;
+    section: string;
 };
