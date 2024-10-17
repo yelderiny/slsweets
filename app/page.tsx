@@ -12,7 +12,7 @@ import Footer from '@/components/footer.client';
 export default function Home() {
     const specialities: speciality[] = [
         {
-            src: '/static/cheesecake/cheesecake8.jpg',
+            src: '/static/cheesecake/cheesecake4.jpg',
             width: 2722,
             height: 4083,
             description: 'Blueberry Cheesecake',
@@ -30,7 +30,7 @@ export default function Home() {
             overrides: 'object-right'
         },
         {
-            src: '/static/cookies/cookies5.jpg',
+            src: '/static/cookies/cookies2.jpg',
             width: 768,
             height: 1024,
             description: 'Kinder Cookies',
