@@ -73,7 +73,7 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
                 <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/menu'>Our Menu</Link>
                 <Link className='text-xs font-semibold lg:text-sm xl:text-base' href='/#contact'>Contact Us</Link>
             </nav>
-            <div>
+            <Link href='/'>
                 <Image
                     className={`w-24 h-auto md:flex-1 lg:w-40 xl:w-48 ${isMenuOpen ? 'hidden' : 'block'}`}
                     src='/static/logo.png'
@@ -81,7 +81,7 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
                     width={1806}
                     height={794}
                 />
-            </div>
+            </Link>
             <div className='md:flex md:justify-end md:items-center md:gap-4 md:flex-1'>
                 <a
                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
