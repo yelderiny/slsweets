@@ -18,18 +18,18 @@ const Page = () => {
         },
         {
             src: '/static/cheesecake/cheesecake5.jpg',
-            width: 3831,
-            height: 4789,
-            overrides: 'object-left'
+            width: 1200,
+            height: 1500,
+            overrides: ''
         },
         {
-            src: '/static/cheesecake/cheesecake7.jpg',
+            src: '/static/cheesecake/cheesecake3.jpg',
             width: 2592,
             height: 3456,
             overrides: 'lg:place-self-end'
         },
         {
-            src: '/static/cheesecake/cheesecake8.jpg',
+            src: '/static/cheesecake/cheesecake4.jpg',
             width: 2722,
             height: 4083,
             overrides: ''
@@ -63,25 +63,25 @@ const Page = () => {
     ];
     const cookies: img[] = [
         {
-            src: '/static/cookies/cookies7.jpg',
+            src: '/static/cookies/cookies4.jpg',
             width: 2560,
             height: 2228,
             overrides: 'lg:place-self-end'
         },
         {
-            src: '/static/cookies/cookies3.jpg',
+            src: '/static/cookies/cookies1.jpg',
             width: 7940,
             height: 7756,
             overrides: ''
         },
         {
-            src: '/static/cookies/cookies5.jpg',
+            src: '/static/cookies/cookies2.jpg',
             width: 768,
             height: 1024,
             overrides: 'lg:place-self-end'
         },
         {
-            src: '/static/cookies/cookies6.jpg',
+            src: '/static/cookies/cookies3.jpg',
             width: 2883,
             height: 4324,
             overrides: 'object-bottom'
@@ -133,7 +133,7 @@ const Page = () => {
             overrides: 'lg:place-self-end'
         },
         {
-            src: '/static/muffins/muffin5.jpg',
+            src: '/static/muffins/muffin4.jpg',
             width: 1707,
             height: 2560,
             overrides: ''
