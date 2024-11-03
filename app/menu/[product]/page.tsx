@@ -1,156 +1,98 @@
 'use client';
 
-import React, {useState} from 'react';
-import Header from '@/components/header.client';
-import MobileNav from '@/components/mobile-nav.client';
 import Image from 'next/image';
-import {useSearchParams} from 'next/navigation';
-import { Unstable_NumberInput as NumberInput } from '@mui/base';
+import React, {useState} from 'react';
+import {useAppContext} from '@/app/context';
+import {productOption} from '@/types/product';
+import Header from '@/components/header.client';
 import {FaMinus, FaPlus} from 'react-icons/fa6';
+import MobileNav from '@/components/mobile-nav.client';
+import {useRouter, useSearchParams} from 'next/navigation';
 import {brownieOptions, cheesecakeOptions, cookieOptions, muffinOptions, truffleOptions} from '@/app/lib/data/products';
 
 const Page = () => {
     const searchParams = useSearchParams();
+    const router = useRouter();
+    const {setCart, toggleCart} = useAppContext()
 
-    const src = searchParams.get('src') as string;
-    const name = searchParams.get('name') as string;
-    const width = searchParams.get('width');
-    const height = searchParams.get('height');
-    const overrides = searchParams.get('overrides') as string;
-
-    const productType = name.toLowerCase();
+    const type = searchParams.get('type') || '';
+    const name = searchParams.get('name') || '';
 
     const [quantity, setQuantity] = useState(1);
+    const [chosenOption, setChosenOption] = useState<productOption | null>(null);
+
+    const productType: productOption[] = {
+        cheesecakes: cheesecakeOptions,
+        brownies: brownieOptions,
+        cookies: cookieOptions,
+        truffles: truffleOptions,
+        muffins: muffinOptions
+    }[type] || [];
+
+    const addToCart = () => {
+        setCart(prevState => [...prevState, {
+            type: type,
+            name: name,
+            description: chosenOption?.description || '',
+            price: chosenOption?.price || 0
+        }]);
+
+        router.push('/menu');
+        toggleCart();
+    }
+
+    const handleQuantityChange = (delta: number) => setQuantity(prev => Math.max(1, prev + delta));
 
     return (
         <>
             <Header override={true}/>
             <MobileNav/>
             <Image
-                src={src}
+                src={searchParams.get('src') as string}
                 alt={name}
-                width={Number(width)}
-                height={Number(height)}
-                className={`${overrides}`}
+                width={Number(searchParams.get('width'))}
+                height={Number(searchParams.get('height'))}
+                className={searchParams.get('overrides') || ''}
             />
             <h1 className='uppercase m-4'>{name}</h1>
-            {
-                productType.includes('cheesecake') ? (
-                    <div className='space-y-0.5'>
-                        {
-                            cheesecakeOptions.map((option, index) => (
-                                <div
-                                    key={index} className='
-                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                        hover:bg-accent hover:border-primary
-                                    '
-                                >
-                                    <p className='text-sm'>{option.description}</p>
-                                    <p className='text-sm'>AED {option.price}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                ) : productType.includes('brownie') ? (
-                    <div className='space-y-0.5'>
-                        {
-                            brownieOptions.map((option, index) => (
-                                <div
-                                    key={index} className='
-                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                        hover:bg-accent hover:border-primary
-                                    '
-                                >
-                                    <p className='text-sm'>{option.description}</p>
-                                    <p className='text-sm'>AED {option.price}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                ) : productType.includes('cookie') ? (
-                    <div className='space-y-0.5'>
-                        {
-                            cookieOptions.map((option, index) => (
-                                <div
-                                    key={index} className='
-                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                        hover:bg-accent hover:border-primary
-                                    '
-                                >
-                                    <p className='text-sm'>{option.description}</p>
-                                    <p className='text-sm'>AED {option.price}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                ) : productType.includes('truffle') ? (
-                    <div className='space-y-0.5'>
-                        {
-                            truffleOptions.map((option, index) => (
-                                <div
-                                    key={index} className='
-                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                        hover:bg-accent hover:border-primary
-                                    '
-                                >
-                                    <p className='text-sm'>{option.description}</p>
-                                    <p className='text-sm'>AED {option.price}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                ) : productType.includes('muffin') ? (
-                    <div className='space-y-0.5'>
-                        {
-                            muffinOptions.map((option, index) => (
-                                <div
-                                    key={index} className='
-                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                        hover:bg-accent hover:border-primary
-                                    '
-                                >
-                                    <p className='text-sm'>{option.description}</p>
-                                    <p className='text-sm'>AED {option.price}</p>
-                                </div>
-                            ))
-                        }
-                    </div>
-                ) : (
-                    <p>Product options not available.</p>
-                )
-            }
-            <div className='flex gap-2 justify-center items-center'>
-                {/* todo: fix the css for the input */}
-                <NumberInput
-                    value={quantity}
-                    onChange={(_event, newValue) => setQuantity(newValue as number)}
-                    slots={{
-                        root: 'div',
-                        input: 'input',
-                        incrementButton: 'button',
-                        decrementButton: 'button',
-                    }}
-                    slotProps={{
-                        root: {
-                            className: 'flex justify-center items-center'
-                        },
-                        input: {
-                            className: 'text-sm'
-                        },
-                        incrementButton: {
-                            children: <FaPlus className='text-base'/>,
-                            className: 'text-sm'
-                        },
-                        decrementButton: {
-                            children: <FaMinus className='text-base'/>,
-                            className: 'text-sm'
-                        }
-                    }}
-
-                />
+            <div className='p-4 space-y-1'>
+                {
+                    productType.map((option, index) => (
+                        <div
+                            key={index}
+                            className={`
+                                flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
+                                hover:bg-accent hover:border-primary cursor-pointer ${chosenOption === option ? 'bg-primary border-primary' : ''} 
+                            `}
+                            onClick={() => setChosenOption(option)}
+                        >
+                            <p className='text-sm'>{option.description}</p>
+                            <p className='text-sm'>AED {option.price}</p>
+                        </div>
+                    ))
+                }
             </div>
-
-
+            <div className='flex justify-center items-center mt-8 gap-5'>
+                <button onClick={() => handleQuantityChange(-1)}>
+                    <FaMinus className='text-sm'/>
+                </button>
+                <input
+                    type='number'
+                    className='text-center text-base font-medium px-2 py-1 w-20 bg-transparent pointer-events-none'
+                    value={quantity}
+                    min={1}
+                    readOnly
+                />
+                <button onClick={() => handleQuantityChange(1)}>
+                    <FaPlus className='text-sm'/>
+                </button>
+            </div>
+            <hr className='my-3 border-t border-black w-5/6 mx-auto'/>
+            <div className='flex justify-center my-4'>
+                <button onClick={addToCart} className={`btn w-1/2 ${!chosenOption ? 'bg-gray-200 text-gray-400 pointer-events-none' : 'btn-primary'}`}>
+                    Add to cart
+                </button>
+            </div>
         </>
     );
 };
