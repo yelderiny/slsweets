@@ -5,106 +5,69 @@ import React from 'react';
 import Header from '@/components/header.client';
 import MobileNav from '@/components/mobile-nav.client';
 import Link from 'next/link';
-import {speciality} from '@/types/img';
 import {faq} from '@/types/faq';
 import Footer from '@/components/footer.client';
+import Cart from '@/components/cart.client';
+import {cheesecakes, brownies, cookies, truffles, muffins} from '@/app/lib/data/products';
+import {product} from '@/types/product';
 
 export default function Home() {
-    const specialities: speciality[] = [
-        {
-            src: '/static/cheesecake/cheesecake4.jpg',
-            width: 2722,
-            height: 4083,
-            description: 'Blueberry Cheesecake',
-            price: 20,
-            section: 'cheesecakes',
-            overrides: ''
-        },
-        {
-            src: '/static/brownies/brownies2.jpg',
-            width: 2466,
-            height: 3648,
-            description: 'Fudgy Brownies',
-            price: 24,
-            section: 'brownies',
-            overrides: 'object-right'
-        },
-        {
-            src: '/static/cookies/cookies2.jpg',
-            width: 768,
-            height: 1024,
-            description: 'Kinder Cookies',
-            price: 20,
-            section: 'cookies',
-            overrides: ''
-        },
-        {
-            src: '/static/truffles/truffles3.jpg',
-            width: 1000,
-            height: 1500,
-            description: 'Chocolate Cake Truffles',
-            price: 16,
-            section: 'truffles',
-            overrides: ''
-        },
-        {
-            src: '/static/muffins/muffin2.jpg',
-            width: 1005,
-            height: 1256,
-            description: 'Chocolate Chip Muffins',
-            price: 35,
-            section: 'muffins',
-            overrides: ''
-        }
-    ];
+    const specialities: product[] = [
+        cheesecakes.filter(cake => cake.name === 'blueberry cheesecake')[0],
+        brownies.filter(brownie => brownie.name === 'fudgy brownies')[0],
+        cookies.filter(cookie => cookie.name === 'kinder cookies')[0],
+        truffles.filter(truffle => truffle.name === 'dark chocolate truffles')[0],
+        muffins.filter(muffin => muffin.name === 'chocolate chip muffins')[0]
+    ]
+
     const faqs: faq[] = [
         {
-            question: "What are your business hours?",
-            answer: "We accept orders 24/7. Once your order is confirmed, we’ll begin preparing it right away."
+            question: 'What are your business hours?',
+            answer: 'We accept orders 24/7. Once your order is confirmed, we’ll begin preparing it right away.'
         },
         {
-            question: "Where is your bakery located?",
-            answer: "We are located in Mirdif, Dubai, at Labban Manor. You can find us on maps."
+            question: 'Where is your bakery located?',
+            answer: 'We are located in Mirdif, Dubai, at Labban Manor. You can find us on maps.'
         },
         {
-            question: "Do you offer custom cakes and desserts?",
-            answer: "Yes, we do! For custom orders, we recommend contacting us through Instagram to discuss what’s possible."
+            question: 'Do you offer custom cakes and desserts?',
+            answer: 'Yes, we do! For custom orders, we recommend contacting us through Instagram to discuss what’s possible.'
         },
         {
-            question: "How far in advance should I place an order?",
-            answer: "Please place your order at least one day in advance."
+            question: 'How far in advance should I place an order?',
+            answer: 'Please place your order at least one day in advance.'
         },
         {
-            question: "Can I place an order online or by phone?",
-            answer: "All orders are placed via Instagram direct messages (DMs)."
+            question: 'Can I place an order online or by phone?',
+            answer: 'All orders are placed via Instagram direct messages (DMs).'
         },
         {
-            question: "Do you offer delivery? Which areas do you serve?",
-            answer: "Yes, we deliver to both Dubai and Sharjah."
+            question: 'Do you offer delivery? Which areas do you serve?',
+            answer: 'Yes, we deliver to both Dubai and Sharjah.'
         },
         {
-            question: "Is there a minimum order requirement for delivery?",
-            answer: "Yes, there is a minimum order of AED 30 for delivery."
+            question: 'Is there a minimum order requirement for delivery?',
+            answer: 'Yes, there is a minimum order of AED 30 for delivery.'
         },
         {
-            question: "Do you offer catering services for events?",
-            answer: "Absolutely! We can work with you to customize your order to suit your event’s needs."
+            question: 'Do you offer catering services for events?',
+            answer: 'Absolutely! We can work with you to customize your order to suit your event’s needs.'
         },
         {
-            question: "What payment methods do you accept?",
-            answer: "We currently accept cash payments."
+            question: 'What payment methods do you accept?',
+            answer: 'We currently accept cash payments.'
         },
         {
-            question: "Can I place an order for same-day delivery, or do I need to pre-order?",
-            answer: "Cheesecake orders must be pre-ordered, but for other menu items, same-day delivery may be possible if the order is placed a few hours in advance."
+            question: 'Can I place an order for same-day delivery, or do I need to pre-order?',
+            answer: 'Cheesecake orders must be pre-ordered, but for other menu items, same-day delivery may be possible if the order is placed a few hours in advance.'
         },
         {
-            question: "What is the delivery fee for my area?",
-            answer: "The delivery fee is AED 10 for both Dubai and Sharjah."
+            question: 'What is the delivery fee for my area?',
+            answer: 'The delivery fee is AED 10 for both Dubai and Sharjah.'
         },
         {
-            question: "Where can I pick up my order?",
-            answer: "You can pick up your order from our location in Mirdif, Street 69C, Compound 39, Villa 2."
+            question: 'Where can I pick up my order?',
+            answer: 'You can pick up your order from our location in Mirdif, Street 69C, Compound 39, Villa 2.'
         }
     ];
 
@@ -114,12 +77,15 @@ export default function Home() {
                 <div className='absolute inset-0 bg-black/40'>
                     <Header/>
                     <MobileNav/>
+                    <Cart/>
 
                     {/* hero */}
-                    <section className='
+                    <section
+                        className='
                     container flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
                     text-background lg:gap-6
-                '>
+                '
+                    >
                         <h1 className='text-5xl font-script sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl'>
                             From Our Oven <br/> Right To Your Heart
                         </h1>
@@ -142,12 +108,14 @@ export default function Home() {
                             container mt-10 space-y-4
                             sm:space-y-0 sm:flex sm:justify-center sm:items-center sm:gap-4
                             lg:gap-8 xl:gap-16
-                        '>
+                        '
+                >
                     <div className='order-1 space-y-8'>
                         <h2 className='title text-center'>
                                 <span className='relative'>Welcome to SLSweets
                                     <span
-                                        className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
+                                        className=' absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'
+                                    />
                                 </span>
                         </h2>
                         <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
@@ -176,7 +144,7 @@ export default function Home() {
                                 w-full h-96 object-cover rounded-md mx-auto sm:mx-0 sm:w-64 sm:h-full sm:flex-shrink-0
                                 lg:w-80
                             '
-                        src='/static/cheesecake/cheesecake4.jpg'
+                        src='/static/cheesecakes/cheesecake2.jpg'
                         alt='cheesecake'
                         width={4160}
                         height={6240}
@@ -188,44 +156,50 @@ export default function Home() {
                     <h2 className='title text-center'>
                         <span className='relative'>Our Specialities
                             <span
-                                className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
+                                className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'
+                            />
                         </span>
                     </h2>
                     <p className='text-sm text-center max-w-prose mx-auto mt-4 lg:text-base'>
                         Our menu is filled with a variety of sweet treats that are sure to satisfy your cravings.
                         From <em className='italic font-bold'>decadent cheesecakes</em> to <em
-                        className='italic font-bold'>fudgy brownies</em>, we have something for everyone.
+                        className='italic font-bold'
+                    >fudgy brownies</em>, we have something for everyone.
                     </p>
                     <div className='text-center mt-4'>
-                        <Link className='btn btn-primary inline-block text-sm text-background lg:text-base' href='/menu'>
+                        <Link
+                            className='btn btn-primary inline-block text-sm text-background lg:text-base'
+                            href='/menu'
+                        >
                             View Our Menu
                         </Link>
                     </div>
-                    <div className='
+                    <div
+                        className='
                         px-12 py-2 flex gap-4 overflow-x-scroll snap-x snap-mandatory mt-8
                         sm:px-0 sm:py-0 sm:overflow-x-visible sm:snap-none sm:flex-wrap sm:justify-center
-                    '>
+                    '
+                    >
                         {
                             specialities.map((item, index) => (
                                 <Link
                                     key={index}
                                     className='flex-shrink-0 sm:p-4 sm:rounded-md sm:hover:cursor-pointer sm:hover:shadow-lg'
-                                    href={`/menu#${item.section}`}
+                                    href={`/menu#${item.type}`}
                                 >
                                     <Image
                                         className={`
-                                        w-72 h-96 object-cover rounded-md snap-center lg:w-96
-                                        ${item.overrides}
-                                    `}
-                                        src={item.src}
+                                            w-72 h-96 object-cover rounded-md snap-center lg:w-96
+                                            ${item.img.overrides}
+                                        `}
+                                        src={item.img.src}
                                         alt={`speciality-${index}`}
-                                        width={item.width}
-                                        height={item.height}
+                                        width={item.img.width}
+                                        height={item.img.height}
                                     />
-                                    <p className='text-base mt-2 uppercase lg:text-lg'>{item.description}</p>
+                                    <p className='text-base mt-2 uppercase lg:text-lg'>{item.name}</p>
                                     <p className='text-xs mt-4 lg:text-sm'>
-                                        from <strong
-                                        className='text-base text-secondary lg:text-lg'>AED {item.price}</strong>
+                                        from <strong className='text-base text-secondary lg:text-lg'>AED {item.options[0].price}</strong>
                                     </p>
                                 </Link>
                             ))
@@ -238,7 +212,8 @@ export default function Home() {
                     <h2 className='title text-center'>
                         <span className='relative'>Faq
                             <span
-                                className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
+                                className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'
+                            />
                         </span>
                     </h2>
                     <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
@@ -263,7 +238,8 @@ export default function Home() {
                     <h2 className='title text-center'>
                             <span className='relative'>Contact Us
                                 <span
-                                    className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'/>
+                                    className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'
+                                />
                             </span>
                     </h2>
                     <p className='text-sm text-center max-w-prose mx-auto lg:text-base'>
