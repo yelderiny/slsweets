@@ -98,17 +98,15 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
                 >
                     <FiShoppingCart className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
                 </button>
-                <a
+                <Link
+                    href='/menu'
                     className={`
                         hidden btn text-xs font-semibold md:inline-block lg:text-sm xl:text-base ${
                         hasScrolled || override ? 'text-gray-800 bg-background' : 'text-background bg-secondary'
                     }`}
-                    href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
-                    target='_blank'
-                    rel='noopener noreferrer'
                 >
                     Order Now
-                </a>
+                </Link>
             </div>
         </header>
     );

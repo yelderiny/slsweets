@@ -83,20 +83,14 @@ export default function Home() {
                     <section
                         className='
                     container flex flex-col justify-center items-center min-h-screen pb-16 gap-4 text-center
-                    text-background lg:gap-6
-                '
+                    text-background lg:gap-6'
                     >
                         <h1 className='text-5xl font-script sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl'>
                             From Our Oven <br/> Right To Your Heart
                         </h1>
-                        <a
-                            className='btn btn-primary inline-block text-sm xl:text-lg'
-                            href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
+                        <Link className='btn btn-primary inline-block text-sm xl:text-lg' href='/menu'>
                             Order Now
-                        </a>
+                        </Link>
                     </section>
                 </div>
             </div>
