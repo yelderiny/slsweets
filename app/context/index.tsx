@@ -1,32 +1,29 @@
 'use client';
 
 import React, {createContext, useState, useContext, ReactNode} from 'react';
-import {product} from '@/types/product';
+import {cartItem} from '@/types/product';
 
 type AppContextType = {
     isMenuOpen: boolean;
     isCartOpen: boolean;
-    products: product[];
-    cart: product[];
-    setCart: (cart: product[]) => void;
-    setProducts: (products: product[]) => void;
+    cart: cartItem[];
+    setCart: (cart: cartItem[]) => void;
     toggleMenu: () => void;
     toggleCart: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const AppProvider: React.FC<{ children: ReactNode }> = ({children}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
-    const [cart, setCart] = useState<product[]>([]);
-    const [products, setProducts] = useState<product[]>([]);
+    const [cart, setCart] = useState<cartItem[]>([]);
 
     const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
     const toggleCart = () => setIsCartOpen(prevState => !prevState);
 
     return (
-        <AppContext.Provider value={{ isMenuOpen, toggleMenu, isCartOpen, toggleCart, cart, setCart, products, setProducts }}>
+        <AppContext.Provider value={{isMenuOpen, toggleMenu, isCartOpen, toggleCart, cart, setCart}}>
             {children}
         </AppContext.Provider>
     );

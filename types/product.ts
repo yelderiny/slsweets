@@ -6,3 +6,7 @@ export type product = {
     img: img,
     options: { description: string, price: number }[]
 }
+
+export type cartItem = product & {
+    quantity: number
+}
