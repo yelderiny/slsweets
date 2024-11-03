@@ -6,13 +6,14 @@ import {FaInstagram} from 'react-icons/fa';
 import {LiaBarsSolid} from 'react-icons/lia';
 import Link from 'next/link';
 import {useAppContext} from '@/app/context';
+import { FaCartShopping } from "react-icons/fa6";
 
 interface HeaderProps {
     override?: boolean
 }
 
 const Header: FC<HeaderProps> = ({ override = false }) => {
-    const { isMenuOpen, toggleMenu } = useAppContext()
+    const { isMenuOpen, toggleMenu, toggleCart } = useAppContext()
     const [hasScrolled, setHasScrolled] = useState(false);
     const [showHeader, setShowHeader] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
@@ -60,8 +61,8 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
             'bg-transparent'} ${showHeader ? 'translate-y-0' : '-translate-y-full'}
         `}>
             <button
-                className={`text-2xl md:hidden ${isMenuOpen ? 'hidden' : ''}`}
-                aria-label='open menu'
+                className={`text-2xl flex-1 md:hidden ${isMenuOpen ? 'hidden' : ''}`}
+                aria-label='toggle menu'
                 onClick={toggleMenu}
             >
                 <LiaBarsSolid className={hasScrolled || override ? 'text-text' : 'text-background'}/>
@@ -75,14 +76,14 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
             </nav>
             <Link href='/'>
                 <Image
-                    className={`w-24 h-auto md:flex-1 lg:w-40 xl:w-48 ${isMenuOpen ? 'hidden' : 'block'}`}
+                    className={`w-24 h-auto flex-1 lg:w-40 xl:w-48 ${isMenuOpen ? 'hidden' : 'block'}`}
                     src='/static/logo.png'
                     alt='logo'
                     width={1806}
                     height={794}
                 />
             </Link>
-            <div className='md:flex md:justify-end md:items-center md:gap-4 md:flex-1'>
+            <div className='flex justify-end items-center gap-2 flex-1 md:gap-4'>
                 <a
                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                     target='_blank'
@@ -91,13 +92,20 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
                 >
                     <FaInstagram className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
                 </a>
-                <a className={`
+                <button
+                    aria-label='toggle cart'
+                    onClick={toggleCart}
+                >
+                    <FaCartShopping className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
+                </button>
+                <a
+                    className={`
                     hidden btn text-xs font-semibold md:inline-block lg:text-sm xl:text-base ${
-                    hasScrolled || override ? 'text-gray-800 bg-background' : 'text-background bg-secondary'
-                }`}
-                   href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
-                   target='_blank'
-                   rel='noopener noreferrer'
+                        hasScrolled || override ? 'text-gray-800 bg-background' : 'text-background bg-secondary'
+                    }`}
+                    href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
+                    target='_blank'
+                    rel='noopener noreferrer'
                 >
                     Order Now
                 </a>
