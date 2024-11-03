@@ -1,20 +1,20 @@
 'use client';
 
-import React, {createContext, useState, useContext, ReactNode} from 'react';
+import {createContext, useState, useContext, ReactNode, FC, Dispatch, SetStateAction} from 'react';
 import {cartItem} from '@/types/product';
 
 type AppContextType = {
     isMenuOpen: boolean;
     isCartOpen: boolean;
     cart: cartItem[];
-    setCart: (cart: cartItem[]) => void;
+    setCart: Dispatch<SetStateAction<cartItem[]>>;
     toggleMenu: () => void;
     toggleCart: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
-export const AppProvider: React.FC<{ children: ReactNode }> = ({children}) => {
+export const AppProvider: FC<{ children: ReactNode }> = ({children}) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cart, setCart] = useState<cartItem[]>([]);

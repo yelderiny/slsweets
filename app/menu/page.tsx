@@ -1,9 +1,12 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image';
-import Header from '@/components/header.client';
-import MobileNav from '@/components/mobile-nav.client';
-import Footer from '@/components/footer.client';
 import Link from 'next/link';
+import Image from 'next/image';
+import Cart from '@/components/cart.client';
+import Header from '@/components/header.client';
+import Footer from '@/components/footer.client';
+import MobileNav from '@/components/mobile-nav.client';
 import {cheesecakes, brownies, cookies, truffles, muffins} from '@/app//lib/data/products';
 
 
@@ -19,6 +22,7 @@ const Page = () => {
         <>
             <Header override={true}/>
             <MobileNav/>
+            <Cart/>
 
             <main className='space-y-20 mt-24 lg:space-y-32 lg:mt-40 xl:mt-52'>
                 {
@@ -63,6 +67,7 @@ const Page = () => {
                                                 href={{
                                                     pathname: `/menu/${product.name.toLowerCase().replace(/ /g, '-')}`,
                                                     query: {
+                                                        type: product.type,
                                                         name: product.name,
                                                         src: product.img.src,
                                                         width: product.img.width,
