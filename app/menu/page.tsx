@@ -38,10 +38,24 @@ const Page = () => {
                                     />
                                 </span>
                             </h2>
-                            <div className='flex flex-wrap justify-center gap-5 lg:gap-10 mt-8'>
+                            <div className='flex flex-wrap justify-center gap-1 lg:gap-5 mt-8'>
                                 {
                                     section.products.map((product, index) => (
-                                        <div key={index}>
+                                        <Link
+                                            key={index}
+                                            className='p-4 rounded-md hover:cursor-pointer hover:shadow-lg'
+                                            href={{
+                                                pathname: `/menu/${product.name.toLowerCase().replace(/ /g, '-')}`,
+                                                query: {
+                                                    type: product.type,
+                                                    name: product.name,
+                                                    src: product.img.src,
+                                                    width: product.img.width,
+                                                    height: product.img.height,
+                                                    overrides: product.img.overrides
+                                                }
+                                            }}
+                                        >
                                             <Image
                                                 key={index}
                                                 className={`
@@ -63,24 +77,10 @@ const Page = () => {
                                             <p className='text-xs sm:text-sm lg:text-base mt-2'>
                                                 from <strong className='text-secondary lg:text-base'>AED {section.products[0].options[0].price}</strong>
                                             </p>
-                                            <Link
-                                                href={{
-                                                    pathname: `/menu/${product.name.toLowerCase().replace(/ /g, '-')}`,
-                                                    query: {
-                                                        type: product.type,
-                                                        name: product.name,
-                                                        src: product.img.src,
-                                                        width: product.img.width,
-                                                        height: product.img.height,
-                                                        overrides: product.img.overrides
-                                                    }
-                                                }}
-                                            >
-                                                <p className='text-xs sm:text-sm underline underline-offset-2 mt-4'>
-                                                    See options
-                                                </p>
-                                            </Link>
-                                        </div>
+                                            <p className='text-xs sm:text-sm underline underline-offset-2 mt-4'>
+                                                See options
+                                            </p>
+                                        </Link>
                                     ))
                                 }
                             </div>
