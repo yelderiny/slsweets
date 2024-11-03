@@ -43,7 +43,7 @@ const Page = () => {
                                     section.products.map((product, index) => (
                                         <Link
                                             key={index}
-                                            className='p-4 rounded-md hover:cursor-pointer hover:shadow-lg'
+                                            className='p-4 rounded-md hover:cursor-pointer hover:shadow-lg' //todo: I wonder if this will have an effect on mobile. Must be tested after deployment
                                             href={{
                                                 pathname: `/menu/${product.name.toLowerCase().replace(/ /g, '-')}`,
                                                 query: {
