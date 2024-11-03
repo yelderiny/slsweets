@@ -1,12 +1,15 @@
 import {img} from '@/types/img';
 
+export type productOption = {
+    description: string,
+    price: number
+};
+
 export type product = {
     type: string,
     name: string,
     img: img,
-    options: { description: string, price: number }[]
-}
+    options: productOption[]
+};
 
-export type cartItem = product & {
-    quantity: number
-}
+export type cartItem = product & productOption;
