@@ -1,20 +1,29 @@
 'use client';
 
 import React, {createContext, useState, useContext, ReactNode} from 'react';
+import {product} from '@/types/product';
 
 type AppContextType = {
     isMenuOpen: boolean;
+    isCartOpen: boolean;
+    cart: product[];
+    setCart: (cart: product[]) => void;
     toggleMenu: () => void;
+    toggleCart: () => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [cart, setCart] = useState<product[]>([]);
+
     const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
+    const toggleCart = () => setIsCartOpen(prevState => !prevState);
 
     return (
-        <AppContext.Provider value={{ isMenuOpen, toggleMenu }}>
+        <AppContext.Provider value={{ isMenuOpen, toggleMenu, isCartOpen, toggleCart, cart, setCart }}>
             {children}
         </AppContext.Provider>
     );
