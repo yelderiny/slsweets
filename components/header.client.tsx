@@ -1,12 +1,12 @@
 'use client';
 
-import Image from 'next/image';
-import React, {FC, useEffect, useState} from 'react';
-import {FaInstagram} from 'react-icons/fa';
-import {LiaBarsSolid} from 'react-icons/lia';
 import Link from 'next/link';
+import Image from 'next/image';
+import {FaInstagram} from 'react-icons/fa';
 import {useAppContext} from '@/app/context';
-import { FaCartShopping } from "react-icons/fa6";
+import {LiaBarsSolid} from 'react-icons/lia';
+import {FiShoppingCart} from 'react-icons/fi';
+import React, {FC, useEffect, useState} from 'react';
 
 interface HeaderProps {
     override?: boolean
@@ -96,7 +96,7 @@ const Header: FC<HeaderProps> = ({ override = false }) => {
                     aria-label='toggle cart'
                     onClick={toggleCart}
                 >
-                    <FaCartShopping className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
+                    <FiShoppingCart className={`text-2xl ${hasScrolled || override ? 'text-text' : 'text-background'}`}/>
                 </button>
                 <a
                     className={`
