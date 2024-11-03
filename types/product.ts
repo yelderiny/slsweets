@@ -12,4 +12,4 @@ export type product = {
     options: productOption[]
 };
 
-export type cartItem = Omit<product, 'options'> & productOption;
+export type cartItem = Omit<product, 'options' | 'img'> & productOption;
