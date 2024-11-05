@@ -6,6 +6,7 @@ import {useAppContext} from '@/app/context';
 import {productOption} from '@/types/product';
 import Header from '@/components/header.client';
 import {FaMinus, FaPlus} from 'react-icons/fa6';
+import {allProducts} from '@/app/lib/data/products';
 import MobileNav from '@/components/mobile-nav.client';
 import {useRouter, useSearchParams} from 'next/navigation';
 import {brownieOptions, cheesecakeOptions, cookieOptions, muffinOptions, truffleOptions} from '@/app/lib/data/products';
@@ -15,8 +16,7 @@ const Page = () => {
     const router = useRouter();
     const { setCart, toggleCart } = useAppContext();
 
-    const type = searchParams.get('type') || '';
-    const name = searchParams.get('name') || '';
+    const product = allProducts.find(product => product.id === searchParams.get('id')) || allProducts[0]; //todo: have it go to 404 if the id is not located
 
     const [quantity, setQuantity] = useState(1);
     const [chosenOption, setChosenOption] = useState<productOption | null>(null);
@@ -27,14 +27,16 @@ const Page = () => {
         cookies: cookieOptions,
         truffles: truffleOptions,
         muffins: muffinOptions
-    }[type] || [];
+    }[product.type] || [];
 
     const addToCart = () => {
         setCart(prevState => [...prevState, {
-            type: type,
-            name: name,
+            id: product.id,
+            type: product.type,
+            name: product.name,
             description: chosenOption?.description || '',
-            price: chosenOption?.price || 0
+            price: chosenOption?.price || 0,
+            quantity: quantity
         }]);
 
         router.push('/menu');
@@ -47,23 +49,23 @@ const Page = () => {
         <>
             <Header override={true}/>
             <MobileNav/>
-            <main className='md:flex md:justify-center md:align-center md:gap-4 md:pt-20 container'>
+            <main className='container md:flex md:justify-center md:align-center md:gap-4 md:mt-20 lg:mt-32 xl:mt-40'>
                 <Image
-                    src={searchParams.get('src') as string}
-                    alt={name}
-                    width={Number(searchParams.get('width'))}
-                    height={Number(searchParams.get('height'))}
-                    className={`h-[37rem] md:w-72 object-cover rounded-md ${searchParams.get('overrides') || ''}`}
+                    src={product.img.src}
+                    alt={product.name}
+                    width={product.img.width}
+                    height={product.img.height}
+                    className={`h-[37rem] md:w-80 lg:w-96 object-cover rounded-md ${product.img.overrides}`}
                 />
                 <div>
                     <h1 className='title capitalize m-4'>
-                          <span className='relative'>{name}
+                          <span className='relative'>{product.name}
                               <span
                                   className='absolute inset-x-0 bottom-2 h-2 bg-secondary -z-10 opacity-30 lg:bottom-4'
                               />
                         </span>
                     </h1>
-                    <p className='text-sm md:text-base mx-4 max-w-prose'>{searchParams.get('description')}</p>
+                    <p className='text-sm md:text-base mx-4 max-w-prose'>{product.description}</p>
                     <div className='p-4 space-y-1'>
                         {
                             productType.map((option, index) => (
@@ -71,7 +73,8 @@ const Page = () => {
                                     key={index}
                                     className={`
                                 flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                hover:bg-accent hover:border-primary cursor-pointer ${chosenOption === option ? 'bg-primary border-primary' : ''} 
+                                hover:bg-accent hover:border-primary cursor-pointer ${chosenOption === option ? 
+                                'bg-primary border-primary' : ''}
                             `}
                                     onClick={() => setChosenOption(option)}
                                 >
