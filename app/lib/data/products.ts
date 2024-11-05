@@ -31,6 +31,7 @@ export const muffinOptions = [
 
 export const cheesecakes: product[] = [
     {
+        id: 'CHE123',
         type: 'cheesecakes',
         name: 'blueberry cheesecake',
         description: 'A rich, creamy cheesecake topped with a luscious blueberries.',
@@ -38,6 +39,7 @@ export const cheesecakes: product[] = [
         options: cheesecakeOptions
     },
     {
+        id:'CHE234',
         type: 'cheesecakes',
         name: 'raspberry cheesecake',
         description: 'Smooth cheesecake paired with a tangy raspberry topping for a refreshing bite.',
@@ -45,6 +47,7 @@ export const cheesecakes: product[] = [
         options: cheesecakeOptions
     },
     {
+        id: 'CHE345',
         type: 'cheesecakes',
         name: 'strawberry cheesecake',
         description: 'Classic cheesecake topped with fresh strawberries and a hint of sweetness.',
@@ -52,6 +55,7 @@ export const cheesecakes: product[] = [
         options: cheesecakeOptions
     },
     {
+        id: 'CHE456',
         type: 'cheesecakes',
         name: 'salted caramel cheesecake',
         description: 'Indulgent cheesecake drizzled with rich salted caramel for a perfect balance.',
@@ -59,6 +63,7 @@ export const cheesecakes: product[] = [
         options: cheesecakeOptions
     },
     {
+        id: 'CHE567',
         type: 'cheesecakes',
         name: 'lotus cheesecake',
         description: 'A creamy cheesecake with a buttery Lotus Biscoff crust and topping.',
@@ -69,6 +74,7 @@ export const cheesecakes: product[] = [
 
 export const brownies: product[] = [
     {
+        id: 'BRO678',
         type: 'brownies',
         name: 'fudgy brownies',
         description: 'Dense and gooey brownies with a rich chocolate flavor in every bite.',
@@ -79,6 +85,7 @@ export const brownies: product[] = [
 
 export const cookies: product[] = [
     {
+        id: 'COO789',
         type: 'cookies',
         name: 'marshmallow chocolate chip cookies',
         description: 'Soft cookies with gooey marshmallow and chocolate chunks throughout.',
@@ -86,6 +93,7 @@ export const cookies: product[] = [
         options: cookieOptions
     },
     {
+        id: 'COO890',
         type: 'cookies',
         name: 'oatmeal raisin cookies',
         description: 'Chewy oatmeal cookies with a hint of cinnamon and sweet raisins.',
@@ -93,6 +101,7 @@ export const cookies: product[] = [
         options: cookieOptions
     },
     {
+        id: 'COO901',
         type: 'cookies',
         name: 'kinder cookies',
         description: 'Deliciously soft cookies filled with creamy Kinder chocolate.',
@@ -103,6 +112,7 @@ export const cookies: product[] = [
 
 export const truffles: product[] = [
     {
+        id: 'TRU012',
         type: 'truffles',
         name: 'white truffles',
         description: 'Delicate white chocolate truffles with a smooth, creamy center.',
@@ -110,6 +120,7 @@ export const truffles: product[] = [
         options: truffleOptions
     },
     {
+        id: 'TRU123',
         type: 'truffles',
         name: 'dark chocolate truffles',
         description: 'Decadent dark chocolate truffles with a rich, intense flavor.',
@@ -117,6 +128,7 @@ export const truffles: product[] = [
         options: truffleOptions
     },
     {
+        id: 'TRU234',
         type: 'truffles',
         name: 'milk truffles',
         description: 'Creamy milk chocolate truffles with a melt-in-your-mouth texture.',
@@ -127,6 +139,7 @@ export const truffles: product[] = [
 
 export const muffins: product[] = [
     {
+        id: 'MUF345',
         type: 'muffins',
         name: 'blueberry muffins',
         description: 'Moist muffins bursting with fresh blueberries in every bite.',
@@ -134,6 +147,7 @@ export const muffins: product[] = [
         options: muffinOptions
     },
     {
+        id: 'MUF456',
         type: 'muffins',
         name: 'raspberry muffins',
         description: 'Sweet and tangy raspberry muffins, perfect for a fruity treat.',
@@ -141,6 +155,7 @@ export const muffins: product[] = [
         options: muffinOptions
     },
     {
+        id: 'MUF567',
         type: 'muffins',
         name: 'chocolate chip muffins',
         description: 'Soft and fluffy muffins loaded with rich chocolate chips.',
@@ -148,3 +163,5 @@ export const muffins: product[] = [
         options: muffinOptions
     }
 ];
+
+export const allProducts: product[] = [...cheesecakes, ...brownies, ...cookies, ...truffles, ...muffins];
