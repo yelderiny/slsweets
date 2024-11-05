@@ -32,6 +32,18 @@ a {
     @apply focus-visible:outline-text
 }
 
+/* safari */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .btn {
     padding: 1em 1.5em;
     @apply font-medium rounded-lg no-underline focus-visible:outline-primary
