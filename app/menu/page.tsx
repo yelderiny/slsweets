@@ -24,7 +24,7 @@ const Page = () => {
             <MobileNav/>
             <Cart/>
 
-            <main className='space-y-20 mt-24 lg:space-y-32 lg:mt-40 xl:mt-52'>
+            <main className='container space-y-20 mt-24 lg:space-y-32 lg:mt-40 xl:mt-52'>
                 {
                     menu.map((section, index) => (
                         <section key={index} id={section.products[0].type} className='container'>
@@ -38,23 +38,15 @@ const Page = () => {
                                     />
                                 </span>
                             </h2>
-                            <div className='flex flex-wrap justify-center gap-1 lg:gap-5 mt-8'>
+                            <div className='flex flex-wrap justify-center lg:gap-5 mt-8'>
                                 {
                                     section.products.map((product, index) => (
                                         <Link
                                             key={index}
-                                            className='p-4 rounded-md hover:cursor-pointer hover:shadow-lg' //todo: I wonder if this will have an effect on mobile. Must be tested after deployment
+                                            className='p-2 md:p-4 rounded-md hover:cursor-pointer hover:shadow-lg' //todo: I wonder if this will have an effect on mobile. Must be tested after deployment
                                             href={{
                                                 pathname: `/menu/${product.name.toLowerCase().replace(/ /g, '-')}`,
-                                                query: {
-                                                    type: product.type,
-                                                    name: product.name,
-                                                    description: product.description,
-                                                    src: product.img.src,
-                                                    width: product.img.width,
-                                                    height: product.img.height,
-                                                    overrides: product.img.overrides
-                                                }
+                                                query: { id: product.id }
                                             }}
                                         >
                                             <Image
