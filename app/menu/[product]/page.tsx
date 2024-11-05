@@ -1,14 +1,14 @@
 'use client';
 
 import Image from 'next/image';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useAppContext} from '@/app/context';
 import {productOption} from '@/types/product';
 import Header from '@/components/header.client';
 import {FaMinus, FaPlus} from 'react-icons/fa6';
 import {allProducts} from '@/app/lib/data/products';
 import MobileNav from '@/components/mobile-nav.client';
-import {useRouter, useSearchParams} from 'next/navigation';
+import {useRouter, useSearchParams, notFound} from 'next/navigation';
 import {brownieOptions, cheesecakeOptions, cookieOptions, muffinOptions, truffleOptions} from '@/app/lib/data/products';
 
 const Page = () => {
@@ -16,10 +16,20 @@ const Page = () => {
     const router = useRouter();
     const { setCart, toggleCart } = useAppContext();
 
-    const product = allProducts.find(product => product.id === searchParams.get('id')) || allProducts[0]; //todo: have it go to 404 if the id is not located
+    const product = allProducts.find(product => product.id === searchParams.get('id'));
 
     const [quantity, setQuantity] = useState(1);
     const [chosenOption, setChosenOption] = useState<productOption | null>(null);
+
+    useEffect(() => {
+        if (!product)
+            notFound()
+
+    }, [product, router]);
+
+    // if product is not found, do not render the page content
+    if (!product)
+        return null;
 
     const productType: productOption[] = {
         cheesecakes: cheesecakeOptions,
