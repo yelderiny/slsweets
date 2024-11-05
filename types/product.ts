@@ -6,6 +6,7 @@ export type productOption = {
 };
 
 export type product = {
+    id: string,
     type: string,
     name: string,
     description: string,
@@ -13,4 +14,4 @@ export type product = {
     options: productOption[]
 };
 
-export type cartItem = Omit<product, 'options' | 'img'> & productOption;
+export type cartItem = Omit<product, 'options' | 'img' | 'description'> & productOption & { quantity: number };
