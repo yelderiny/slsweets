@@ -8,6 +8,7 @@ export type productOption = {
 export type product = {
     type: string,
     name: string,
+    description: string,
     img: img,
     options: productOption[]
 };

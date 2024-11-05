@@ -49,6 +49,7 @@ const Page = () => {
                                                 query: {
                                                     type: product.type,
                                                     name: product.name,
+                                                    description: product.description,
                                                     src: product.img.src,
                                                     width: product.img.width,
                                                     height: product.img.height,
