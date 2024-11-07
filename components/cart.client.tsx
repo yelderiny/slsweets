@@ -51,7 +51,7 @@ const Cart = () => {
                                             <p className="text-xs">
                                                 {item.description}
                                             </p>
-                                            <p className="text-sm pt-2">
+                                            <p className="text-xs pt-2">
                                                 AED {item.price}
                                             </p>
                                         </div>
@@ -64,7 +64,7 @@ const Cart = () => {
                                             Remove
                                         </p>
                                     </div>
-                                    <div className="flex items-center justify-around">
+                                    <div className="flex items-center justify-around mx-16">
                                         <IoIosRemove onClick={() => handleQuantityChange(index, -1)}/>
                                         <div>
                                             {item.quantity}
