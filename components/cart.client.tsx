@@ -4,6 +4,7 @@ import React from 'react';
 import {useAppContext} from '@/app/context';
 import {LiaTimesSolid} from 'react-icons/lia';
 import {IoIosAdd, IoIosRemove} from "react-icons/io";
+import Link from "next/link";
 
 
 const Cart = () => {
@@ -38,39 +39,50 @@ const Cart = () => {
                     <div className="flex items-center justify-center h-full text-xl">
                         Your cart is empty
                     </div> :
-                    cart.map((item, index) => (
-                        <div key={index} className="px-8 py-4 ">
-                            <div className="flex justify-between">
-                                <div className="w-2/3">
-                                    <p className="capitalize font-medium text-base">
-                                        {item.name}
-                                    </p>
-                                    <p className="text-xs">
-                                        {item.description}
-                                    </p>
-                                    <p className="text-sm pt-2">
-                                        AED {item.price}
-                                    </p>
-                                </div>
-                                <p
-                                    className="underline flex justify-center items-center
+                    <div className="flex-1 overflow-y-auto pb-20">
+                        {
+                            cart.map((item, index) => (
+                                <div key={index} className="px-8 py-4 ">
+                                    <div className="flex justify-between">
+                                        <div className="w-2/3">
+                                            <p className="capitalize font-medium text-base">
+                                                {item.name}
+                                            </p>
+                                            <p className="text-xs">
+                                                {item.description}
+                                            </p>
+                                            <p className="text-sm pt-2">
+                                                AED {item.price}
+                                            </p>
+                                        </div>
+                                        <p
+                                            className="underline flex justify-center items-center
                                             hover:italic transition duration-500 ease-in-out text-xs"
-                                    onClick={() => {
-                                        setCart(prevItems => prevItems.filter((_, i) => i !== index))
-                                    }}>
-                                    Remove
-                                </p>
-                            </div>
-                            <div className="flex items-center justify-around">
-                                <IoIosRemove onClick={() => handleQuantityChange(index, -1)}/>
-                                <div>
-                                    {item.quantity}
+                                            onClick={() => {
+                                                setCart(prevItems => prevItems.filter((_, i) => i !== index))
+                                            }}>
+                                            Remove
+                                        </p>
+                                    </div>
+                                    <div className="flex items-center justify-around">
+                                        <IoIosRemove onClick={() => handleQuantityChange(index, -1)}/>
+                                        <div>
+                                            {item.quantity}
+                                        </div>
+                                        <IoIosAdd onClick={() => handleQuantityChange(index, 1)}/>
+                                    </div>
+                                    <hr className='mx-8 border-t border-gray-200 my-2'/>
                                 </div>
-                                <IoIosAdd onClick={() => handleQuantityChange(index, 1)}/>
-                            </div>
-                            <hr className='mx-8 border-t border-gray-200 my-2'/>
+                            ))
+                        }
+                        <div className="flex fixed bottom-0 left-0 w-full py-8 justify-center">
+                            <Link href="/checkout">
+                                <button className="btn btn-primary">
+                                    Checkout
+                                </button>
+                            </Link>
                         </div>
-                    ))
+                    </div>
             }
         </div>
     );
