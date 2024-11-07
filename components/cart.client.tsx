@@ -9,6 +9,11 @@ import {IoIosAdd, IoIosRemove} from "react-icons/io";
 const Cart = () => {
     const {isCartOpen, toggleCart, cart, setCart} = useAppContext();
 
+    const handleQuantityChange = (itemIndex: number, delta: number) =>
+        setCart(prevItems => prevItems.map((currItem, currIndex) =>
+            currIndex === itemIndex ? {...currItem, quantity: Math.max(1, currItem.quantity + delta)} : currItem))
+
+
     return (
         <div
             className={`
@@ -57,25 +62,11 @@ const Cart = () => {
                                 </p>
                             </div>
                             <div className="flex items-center justify-around">
-                                <IoIosRemove onClick={() => {
-                                    setCart(prevItems => {
-                                        const updatedItems = [...prevItems];
-                                        updatedItems[index].quantity = Math.max(1, updatedItems[index].quantity - 1);
-                                        console.log(updatedItems);
-                                        return updatedItems;
-                                    })
-                                }}/>
-                                <div className="">
+                                <IoIosRemove onClick={() => handleQuantityChange(index, -1)}/>
+                                <div>
                                     {item.quantity}
                                 </div>
-                                <IoIosAdd onClick={() => {
-                                    setCart(prevItems => {
-                                        const updatedItems = [...prevItems];
-                                        updatedItems[index].quantity = Math.max(1, updatedItems[index].quantity + 1);
-                                        console.log(updatedItems);
-                                        return updatedItems;
-                                    })
-                                }}/>
+                                <IoIosAdd onClick={() => handleQuantityChange(index, 1)}/>
                             </div>
                             <hr className='mx-8 border-t border-gray-200 my-2'/>
                         </div>
