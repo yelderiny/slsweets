@@ -1,18 +1,27 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
+import React, {useEffect} from 'react';
 import {useAppContext} from '@/app/context';
 import {LiaTimesSolid} from 'react-icons/lia';
 import {IoIosAdd, IoIosRemove} from 'react-icons/io';
 
 
 const Cart = () => {
-    const { isCartOpen, toggleCart, cart, setCart } = useAppContext();
+    const {isCartOpen, toggleCart, cart, setCart} = useAppContext();
+    const subtotal = cart.reduce((cartSubtotal, item) => cartSubtotal + item.price * item.quantity, 0);
+
+    useEffect(() => {
+        if (isCartOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    }, [toggleCart]);
 
     const handleQuantityChange = (current: number, delta: number) =>
         setCart(prevItems => prevItems.map((item, index) =>
-            index === current ? { ...item, quantity: Math.max(1, item.quantity + delta) } : item));
+            index === current ? {...item, quantity: Math.max(1, item.quantity + delta)} : item));
 
     return (
         <div
@@ -34,46 +43,50 @@ const Cart = () => {
                     <div className='flex items-center justify-center h-full text-xl'>
                         Your cart is empty
                     </div> :
-                    <div className='mb-20'>
-                        {
-                            cart.map((item, index) => (
-                                <div key={index} className='mx-4 my-4'>
-                                    <div className='flex justify-between'>
-                                        <div className='w-2/3'>
-                                            <p className='capitalize font-medium text-base'>{item.name}</p>
-                                            <p className='text-xs mt-1'>{item.description}</p>
-                                            <p className='text-xs mt-4'>AED {item.price}</p>
+                    <>
+                        <div className='overflow-y-auto h-2/3 mx-8'>
+                            {
+                                cart.map((item, index) => (
+                                    <div key={index} className='my-4'>
+                                        <div className='flex justify-between'>
+                                            <div className='w-2/3'>
+                                                <p className='capitalize font-medium text-base'>{item.name}</p>
+                                                <p className='text-xs mt-1'>{item.description}</p>
+                                                <p className='text-xs mt-4'>AED {item.price}</p>
+                                            </div>
+                                            <p
+                                                className='flex justify-center items-center text-xs cursor-pointer underline
+                                                hover:underline'
+                                                onClick={() => setCart(prevItems => prevItems.filter((_, i) => i !== index))}
+                                            >
+                                                Remove
+                                            </p>
                                         </div>
-                                        {/*todo: transition the underline rather than the italic on hover*/}
-                                        <p
-                                            className='flex justify-center items-center cursor-pointer underline hover:italic
-                                            transition duration-500 ease-in-out text-xs'
-                                            onClick={() => setCart(prevItems => prevItems.filter((_, i) => i !== index))}
-                                        >
-                                            Remove
-                                        </p>
+                                        <div className='flex justify-center items-center gap-8'>
+                                            <IoIosRemove
+                                                className='cursor-pointer'
+                                                onClick={() => handleQuantityChange(index, -1)}
+                                            />
+                                            <div>{item.quantity}</div>
+                                            <IoIosAdd
+                                                className='cursor-pointer'
+                                                onClick={() => handleQuantityChange(index, 1)}
+                                            />
+                                        </div>
+                                        <hr className='mx-8 my-2 border-t border-gray-200'/>
                                     </div>
-                                    <div className='flex justify-center items-center gap-8'>
-                                        <IoIosRemove
-                                            className='cursor-pointer'
-                                            onClick={() => handleQuantityChange(index, -1)}
-                                        />
-                                        <div>{item.quantity}</div>
-                                        <IoIosAdd
-                                            className='cursor-pointer'
-                                            onClick={() => handleQuantityChange(index, 1)}
-                                        />
-                                    </div>
-                                    <hr className='mx-8 my-2 border-t border-gray-200'/>
-                                </div>
-                            ))
-                        }
-                        <div className='fixed bottom-0 left-0 flex justify-center w-full my-8'>
+                                ))
+                            }
+                        </div>
+                        <div className='absolute bottom-0 flex flex-col items-center my-4 w-full cursor-pointer'>
+                            <p className="text-right w-full px-8 my-4">
+                                <strong className="font-medium">Subtotal</strong> AED {subtotal}
+                            </p>
                             <Link href='/checkout'>
                                 <button className='btn btn-primary'>Checkout</button>
                             </Link>
                         </div>
-                    </div>
+                    </>
             }
         </div>
     );
