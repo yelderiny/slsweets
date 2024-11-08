@@ -12,12 +12,8 @@ const Cart = () => {
     const subtotal = cart.reduce((cartSubtotal, item) => cartSubtotal + item.price * item.quantity, 0);
 
     useEffect(() => {
-        if (isCartOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
-    }, [toggleCart]);
+        document.body.style.overflow = isCartOpen ? 'hidden' : 'auto';
+    }, [isCartOpen]);
 
     const handleQuantityChange = (current: number, delta: number) =>
         setCart(prevItems => prevItems.map((item, index) =>
