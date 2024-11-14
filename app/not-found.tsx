@@ -11,7 +11,7 @@ export default function NotFound() {
 
     return (
         <>
-            <Header override={true}/>
+            <Header/>
             <MobileNav/>
 
             <div className='container flex flex-col md:flex-row-reverse justify-center align-center text-center

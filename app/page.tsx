@@ -75,7 +75,7 @@ export default function Home() {
         <>
             <div className='relative bg-hero bg-cover h-dvh bg-center'>
                 <div className='absolute inset-0 bg-black/40'>
-                    <Header/>
+                    <Header image={true}/>
                     <MobileNav/>
                     <Cart/>
 
@@ -146,7 +146,7 @@ export default function Home() {
                 </section>
 
                 {/* specialities */}
-                <section id='specialties' className='container'>
+                <section id='our-specialties' className='container'>
                     <h2 className='title text-center'>
                         <span className='relative'>Our Specialities
                             <span
@@ -228,7 +228,7 @@ export default function Home() {
                 </section>
 
                 {/* contact us */}
-                <section id='contact' className='container space-y-4'>
+                <section id='contact-us' className='container space-y-4'>
                     <h2 className='title text-center'>
                             <span className='relative'>Contact Us
                                 <span

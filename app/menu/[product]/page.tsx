@@ -25,7 +25,6 @@ const Page = () => {
     useEffect(() => {
         if (!product)
             notFound()
-
     }, [product, router]);
 
     // if product is not found, do not render the page content
@@ -58,7 +57,7 @@ const Page = () => {
 
     return (
         <>
-            <Header override={true}/>
+            <Header/>
             <MobileNav/>
             <Cart/>
 

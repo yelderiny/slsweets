@@ -20,7 +20,7 @@ const Page = () => {
     ];
     return (
         <>
-            <Header override={true}/>
+            <Header/>
             <MobileNav/>
             <Cart/>
 
