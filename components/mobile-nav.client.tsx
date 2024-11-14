@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {FaInstagram} from 'react-icons/fa';
 import {LiaTimesSolid} from 'react-icons/lia';
 import Link from 'next/link';
@@ -10,6 +10,11 @@ import {useAppContext} from '@/app/context';
 
 const MobileNav  = () => {
     const { isMenuOpen, toggleMenu } = useAppContext();
+
+    useEffect(() => {
+        document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto'
+    }, [isMenuOpen]);
+
 
     return (
         <div
