@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import React, {useEffect} from 'react';
+import React, {useEffect, useMemo} from 'react';
 import {useAppContext} from '@/app/context';
 import {LiaTimesSolid} from 'react-icons/lia';
 import {IoIosAdd, IoIosRemove} from 'react-icons/io';
@@ -9,15 +9,25 @@ import {IoIosAdd, IoIosRemove} from 'react-icons/io';
 
 const Cart = () => {
     const {isCartOpen, toggleCart, cart, setCart} = useAppContext();
-    const subtotal = cart.reduce((cartSubtotal, item) => cartSubtotal + item.price * item.quantity, 0);
+
+    const subtotal = useMemo(() =>
+            cart.reduce((total, item) => total + item.price * item.quantity, 0),
+        [cart]
+    );
 
     useEffect(() => {
         document.body.style.overflow = isCartOpen ? 'hidden' : 'auto';
     }, [isCartOpen]);
 
-    const handleQuantityChange = (current: number, delta: number) =>
-        setCart(prevItems => prevItems.map((item, index) =>
-            index === current ? {...item, quantity: Math.max(1, item.quantity + delta)} : item));
+    const handleQuantityChange = (index: number, delta: number) =>
+        setCart(prevItems =>
+            prevItems.map((item, i) =>
+                i === index ? {...item, quantity: Math.max(1, item.quantity + delta)} : item
+            )
+        );
+
+    const handleRemoveItem = (index: number) =>
+        setCart(prevItems => prevItems.filter((_, i) => i !== index));
 
     return (
         <div
@@ -53,7 +63,7 @@ const Cart = () => {
                                             <p
                                                 className='flex justify-center items-center text-xs cursor-pointer underline
                                                 hover:underline'
-                                                onClick={() => setCart(prevItems => prevItems.filter((_, i) => i !== index))}
+                                                onClick={() => handleRemoveItem(index)}
                                             >
                                                 Remove
                                             </p>
