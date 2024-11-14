@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import React, {useEffect, useState} from 'react';
+import Cart from '@/components/cart.client';
 import {useAppContext} from '@/app/context';
 import {productOption} from '@/types/product';
 import Header from '@/components/header.client';
 import {FaMinus, FaPlus} from 'react-icons/fa6';
+import React, {useEffect, useState} from 'react';
 import {allProducts} from '@/app/lib/data/products';
 import MobileNav from '@/components/mobile-nav.client';
 import {useRouter, useSearchParams, notFound} from 'next/navigation';
@@ -59,6 +60,8 @@ const Page = () => {
         <>
             <Header override={true}/>
             <MobileNav/>
+            <Cart/>
+
             <main className='container md:flex md:justify-center md:align-center md:gap-4 md:mt-20 lg:mt-32 xl:mt-40'>
                 <Image
                     src={product.img.src}
