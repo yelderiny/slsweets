@@ -8,7 +8,7 @@ import Link from 'next/link';
 import {useAppContext} from '@/app/context';
 
 
-const MobileNav  = () => {
+const MobileNav = () => {
     const { isMenuOpen, toggleMenu } = useAppContext();
 
     useEffect(() => {
@@ -60,11 +60,8 @@ const MobileNav  = () => {
                 </Link>
             </nav>
             <div className='border border-text-50 pr-6'/>
-            <div className={`
-                transition-transform duration-300 ease-in ${
-                isMenuOpen ? 'translate-y-0' : 'translate-y-5'
-            }`}>
-            <a
+            <div className={`transition-transform duration-300 ease-in ${isMenuOpen ? 'translate-y-0' : 'translate-y-5'}`}>
+                <a
                     href='https://www.instagram.com/_sl_sweets?igsh=Zzdxdmk3ajVqMXEw'
                     target='_blank'
                     rel='noopener noreferrer'
@@ -72,7 +69,10 @@ const MobileNav  = () => {
                 >
                     <FaInstagram className='text-3xl m-auto mb-4'/>
                 </a>
-                <button className='btn btn-primary inline-block text-background'>Order Now</button>
+                {/* todo: check if adding a link here changes anything */}
+                <Link href='/menu'>
+                    <button className='btn btn-primary inline-block text-background'>Order Now</button>
+                </Link>
             </div>
         </div>
     );
