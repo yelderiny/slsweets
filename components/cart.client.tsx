@@ -89,7 +89,7 @@ const Cart = () => {
                                 <strong className="font-medium">Subtotal</strong> AED {subtotal}
                             </p>
                             <Link href='/checkout'>
-                                <button className='btn btn-primary'>Checkout</button>
+                                <button onClick={toggleCart} className='btn btn-primary'>Checkout</button>
                             </Link>
                         </div>
                     </>

@@ -24,7 +24,7 @@ const Page = () => {
 
     useEffect(() => {
         if (!product)
-            notFound()
+            notFound();
     }, [product, router]);
 
     // if product is not found, do not render the page content
@@ -84,10 +84,10 @@ const Page = () => {
                                 <div
                                     key={index}
                                     className={`
-                                flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
-                                hover:bg-accent hover:border-primary cursor-pointer ${chosenOption === option ? 
-                                'bg-primary border-primary' : ''}
-                            `}
+                                        flex justify-between p-2 border rounded-md transition-colors duration-300 ease-in-out
+                                        hover:bg-accent hover:border-primary cursor-pointer ${chosenOption === option ?
+                                        'bg-primary border-primary' : ''}
+                                    `}
                                     onClick={() => setChosenOption(option)}
                                 >
                                     <p className='text-sm'>{option.description}</p>
